@@ -22,16 +22,12 @@ body {
 }
 
 .intro-myself .title {
-  font-family: montserrat;
+  font-family: sans-serif;
 }
 
 .intro-myself .sub-title {
-  font-family: Calibri;
+  font-family: sans-serif;
   color: #494949b8;
-}
-
-.intro-myself .desc {
-  font-family: Tahoma;
 }
 
 section.about-info {
