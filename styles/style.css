@@ -1,0 +1,2158 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&display=swap");
+:root {
+  --primary-color: #007AF3;
+  --bg-color: linear-gradient(45deg, #070424, #010032, #060550);
+  --thought: 2.7rem;
+  --intro: 1.6rem;
+  --profession: 1rem;
+  --bg-image: url("../assets/Images/4844626.png");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+@supports (-moz-appearance: none) and (background-attachment: local) and (not (-moz-osx-font-smoothing: auto)) {
+  html {
+    font-size: 18px;
+  }
+  a button {
+    margin-right: 15px;
+  }
+  .scroll img {
+    scale: 1.3;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: "Montserat", sans-serif;
+  overflow-x: hidden;
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+  background: var(--bg-image) repeat, var(--bg-color);
+  background-blend-mode: hard-light;
+  background-position: center;
+}
+
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.65;
+  z-index: 1;
+}
+
+.navbar .logo {
+  text-decoration: none;
+  color: #F1A34F;
+}
+
+.clouds {
+  background-image: url("../assets/Images/cloud.svg");
+  width: 100%;
+  height: 3rem;
+}
+
+.nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  width: 50%;
+  background: rgba(255, 255, 255, 0);
+  height: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: auto;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  position: relative;
+}
+
+.line {
+  width: 30px;
+  height: 3px;
+  background: white;
+  margin: 5px;
+  -webkit-transition: all 1s ease-in;
+  transition: all 1s ease-in;
+}
+
+.line.open {
+  background: black;
+}
+
+.hamburger {
+  display: none;
+  position: absolute;
+  cursor: pointer;
+  right: 6%;
+  top: -0.5em;
+  width: 1.2em;
+  -webkit-transform: translate(-5%, -50%);
+          transform: translate(-5%, -50%);
+}
+
+button {
+  cursor: pointer;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  z-index: 5;
+}
+
+section .intro {
+  font-size: var(--intro);
+  color: white;
+  text-align: center;
+  opacity: 0.7;
+}
+
+section .thought {
+  color: white;
+  font-size: var(--thought);
+  text-align: center;
+  line-height: 1.5em;
+}
+
+section .line1 {
+  width: 9em;
+}
+
+section .profession {
+  font-size: var(--profession);
+  color: white;
+  text-align: center;
+  opacity: 0.6;
+  word-spacing: 1px;
+  letter-spacing: 2px;
+}
+
+section .buttons {
+  list-style: none;
+  margin: auto;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section .buttons button {
+  background: #0000CC;
+  color: white;
+  border-color: transparent;
+  border-radius: 2rem;
+  cursor: pointer;
+  z-index: 200;
+  font-size: .9rem;
+}
+
+section .img-page {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section {
+  width: 100%;
+  min-height: 100vh;
+  z-index: 10;
+}
+
+button {
+  width: 9em;
+  height: 3em;
+}
+
+.message {
+  cursor: pointer;
+}
+
+.home-illus {
+  -webkit-transition: 0.3s width ease-in-out;
+  transition: 0.3s width ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+  section {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 1.1fr 6.5fr .3fr 2.87fr 1fr;
+        grid-template-rows: 1.1fr 6.5fr .3fr 2.87fr 1fr;
+    -ms-grid-columns: 1fr 4fr 4fr 1fr;
+        grid-template-columns: 1fr 4fr 4fr 1fr;
+    font-size: 1rem;
+  }
+  section .navbar {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-column: 1/5;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    -ms-grid-columns: 1.2fr 2.5fr 4.35fr 1.2fr;
+        grid-template-columns: 1.2fr 2.5fr 4.35fr 1.2fr;
+  }
+  section .navbar .logo {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-column: 2/4;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    letter-spacing: 2px;
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section .navbar nav {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 2;
+    grid-column: 3/5;
+    position: relative;
+  }
+  section .navbar nav .hamburger {
+    position: absolute;
+    top: 2em;
+    right: 3em;
+    scale: .8;
+  }
+  section .contents {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-column: 2/4;
+    font-size: 1em;
+    display: grid;
+    -ms-grid-rows: 1fr 2fr 1fr 1fr;
+        grid-template-rows: 1fr 2fr 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  section .contents .intro {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section .contents .thought {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-self: center;
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    letter-spacing: -1.2px;
+  }
+  section .contents .profession {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-self: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section .contents .buttons {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    grid-row: 4/5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section .contents .buttons a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  section .contents .buttons a:nth-child(1) {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+  }
+  section .contents .buttons a:nth-child(2) {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+  }
+  section .message {
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
+    grid-row: 6/7;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3/4;
+  }
+  section .message img {
+    scale: 0.7;
+  }
+  section .clouds {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 6;
+    grid-column: 1/7;
+    opacity: 0.5;
+  }
+  section .scroll {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    grid-row: 4/5;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+  }
+  section .page-indi {
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    grid-row: 5/6;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-column: 2/4;
+  }
+  .project .buttons {
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .project .buttons a {
+    width: 200%;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .project .page-indi img {
+    width: 8em;
+  }
+  .about {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 1fr .77fr 1.77fr 2.23fr 5.15fr 1fr;
+        grid-template-rows: 1fr .77fr 1.77fr 2.23fr 5.15fr 1fr;
+    -ms-grid-columns: 1fr 8.3fr 1fr;
+        grid-template-columns: 1fr 8.3fr 1fr;
+  }
+  .about .contents {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 3;
+    grid-row: 2/5;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    z-index: 70;
+  }
+  .about .contents .profession {
+    padding-bottom: 3em;
+    line-height: 2em;
+  }
+  .about .contents .buttons {
+    padding-bottom: 1em;
+  }
+  .about .about-me {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 4;
+    grid-row: 3/7;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1/4;
+    background-color: white;
+    -webkit-clip-path: polygon(100% 15%, 100% 60%, 25% 100%, 0% 100%, 0% 70%);
+            clip-path: polygon(100% 15%, 100% 60%, 25% 100%, 0% 100%, 0% 70%);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-blend-mode: overlay;
+    position: relative;
+    z-index: 60;
+  }
+  .about .about-me .about-illus {
+    width: clamp(19em, 65%, 22em);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    mix-blend-mode: luminosity;
+    opacity: 0.9;
+  }
+  .about .message {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
+    grid-row: 6/7;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    position: relative;
+  }
+  .about .message img {
+    position: absolute;
+    top: 0em;
+    left: 10em;
+  }
+  .about .page-indi {
+    z-index: 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
+    grid-row: 6/7;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+  }
+  .about .page-indi img {
+    width: 8em;
+  }
+  .contact {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 1fr 1.45fr 1fr 5fr 1.6fr 6fr 1fr;
+        grid-template-rows: 1fr 1.45fr 1fr 5fr 1.6fr 6fr 1fr;
+    -ms-grid-columns: 1.2fr 6.3fr 1.2fr;
+        grid-template-columns: 1.2fr 6.3fr 1.2fr;
+  }
+  .contact .contents {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 3;
+    grid-row: 2/5;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    -ms-grid-rows: 1fr .6fr 1fr 1fr;
+        grid-template-rows: 1fr .6fr 1fr 1fr;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .contact .contents .thought {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .contact .contents .animate-lines {
+    display: none;
+  }
+  .contact .contents .contact-info {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 3;
+    grid-row: 2/5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .contact .contents .contact-info .mail,
+  .contact .contents .contact-info .phno {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .contact .contents .contact-info .icon-link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 70%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    cursor: pointer;
+  }
+  .contact .contents .contact-info .icon-link a img {
+    width: 2.5em;
+  }
+  .contact .contents .contact-info .mail,
+  .contact .contents .contact-info .phno {
+    text-align: start;
+  }
+  .contact .contents .contact-info .mail .add,
+  .contact .contents .contact-info .mail .phone,
+  .contact .contents .contact-info .phno .add,
+  .contact .contents .contact-info .phno .phone {
+    margin-left: 2.5em;
+    color: white;
+    opacity: 0.7;
+    font-size: .9em;
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+  .contact .contents .contact-info .mail img,
+  .contact .contents .contact-info .phno img {
+    scale: 0.7;
+    cursor: pointer;
+  }
+  .contact .contact-form {
+    padding-top: 1em;
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 2;
+    grid-row: 5/7;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    color: white;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 3fr 1.5fr 6fr 1.5fr;
+        grid-template-rows: 3fr 1.5fr 6fr 1.5fr;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .contact .contact-form .contact-title {
+    display: none;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+  }
+  .contact .contact-form .info {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+    grid-row: 1/4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-left: -1em;
+    position: relative;
+  }
+  .contact .contact-form .info .or::before {
+    content: "or";
+    font-size: 1.2em;
+  }
+  .contact .contact-form .info .name,
+  .contact .contact-form .info .email,
+  .contact .contact-form .info .message {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding: 1em;
+  }
+  .contact .contact-form .info .name input,
+  .contact .contact-form .info .email input,
+  .contact .contact-form .info .message input {
+    height: 2em;
+    width: 19em;
+    color: #000;
+    padding-left: .5em;
+    border-radius: 5px;
+    z-index: 70;
+  }
+  .contact .contact-form .info .message input {
+    height: 4em;
+  }
+  .contact .contact-form .contact-but {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    grid-row: 4/5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    padding-top: 1em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .contact .contact-form .contact-but button {
+    background: #0000CC;
+    color: white;
+    border-color: transparent;
+    border-radius: 2rem;
+    cursor: pointer;
+    z-index: 200;
+    font-size: .9rem;
+  }
+  .contact .get-alter {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 3;
+    grid-row: 3/6;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3/4;
+    display: none;
+  }
+  .contact .page-indi {
+    -ms-grid-row: 7;
+    -ms-grid-row-span: 1;
+    grid-row: 7/8;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .contact .page-indi img {
+    width: 8em;
+  }
+  .contact .get-alter {
+    display: none;
+  }
+  nav {
+    position: relative;
+  }
+  .illustrations {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+    z-index: 600;
+  }
+  .animate-lines {
+    display: none;
+  }
+  .nav-links {
+    position: fixed;
+    background: white;
+    height: 100vh;
+    width: 100%;
+    z-index: 500;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    top: -.1em;
+    left: -.1em;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: auto;
+    text-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-clip-path: circle(0px at 105% -20%);
+            clip-path: circle(0px at 105% -20%);
+    -webkit-transition: all 1s ease-out;
+    transition: all 1s ease-out;
+    pointer-events: none;
+  }
+  .nav-links.open {
+    clip-path: circle(150% at 90% -10%);
+    -webkit-clip-path: circle(150% at 90% -10%);
+    pointer-events: all;
+  }
+  .nav-links li {
+    opacity: 0;
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    margin: auto;
+  }
+  .nav-links li a {
+    display: fixed;
+    color: black;
+    font-size: 25px;
+    opacity: 0.8;
+  }
+  .nav-links li a:hover {
+    opacity: 1;
+  }
+  .nav-links li:nth-child(1) {
+    -webkit-transition: all 0.5s ease-in-out 0.2s;
+    transition: all 0.5s ease-in-out 0.2s;
+  }
+  .nav-links li:nth-child(2) {
+    -webkit-transition: all 0.5s ease 0.4s;
+    transition: all 0.5s ease 0.4s;
+  }
+  .nav-links li:nth-child(3) {
+    -webkit-transition: all 0.5s ease 0.6s;
+    transition: all 0.5s ease 0.6s;
+  }
+  li.fade {
+    opacity: 1;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  section {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 1.3fr 6.5fr .6fr 3fr 1fr;
+        grid-template-rows: 1.3fr 6.5fr .6fr 3fr 1fr;
+    -ms-grid-columns: 1.2fr 2.5fr 4.35fr 1.2fr;
+        grid-template-columns: 1.2fr 2.5fr 4.35fr 1.2fr;
+  }
+  section .navbar {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 4;
+    grid-column: 2/6;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    -ms-grid-columns: 2.9fr 7fr 10.3fr;
+        grid-template-columns: 2.9fr 7fr 10.3fr;
+  }
+  section .navbar .logo {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    letter-spacing: 4px;
+    text-align: left;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section .navbar nav {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 2;
+    grid-column: 3/5;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  section .navbar nav .nav-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 2em;
+  }
+  section .navbar nav .hamburger {
+    display: none;
+  }
+  section .page-indi img {
+    width: 8em;
+  }
+  section .contents {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    grid-row: 2/4;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-column: 2/4;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+    -ms-flex-line-pack: distribute;
+        align-content: space-around;
+  }
+  section .contents .profession {
+    line-height: 20px;
+  }
+  section .message {
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
+    grid-row: 6/7;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 1;
+    grid-column: 4/5;
+  }
+  section .message img {
+    scale: 0.7;
+  }
+  section .clouds {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 6;
+    grid-column: 1/7;
+    opacity: 0.5;
+  }
+  section .scroll {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    grid-row: 4/5;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+  }
+  section .page-indi {
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    grid-row: 5/6;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+  }
+  section .illustrations {
+    display: none;
+  }
+  .project .buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .project .page-indi img {
+    width: 8em;
+  }
+  .about {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 1fr .77fr 1.77fr 2.23fr 5.15fr 1fr;
+        grid-template-rows: 1fr .77fr 1.77fr 2.23fr 5.15fr 1fr;
+    -ms-grid-columns: 1fr 8.3fr 1fr;
+        grid-template-columns: 1fr 8.3fr 1fr;
+  }
+  .about .contents {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 3;
+    grid-row: 2/5;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    z-index: 20;
+    margin: 0;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .about .contents .thought {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .about .contents .profession {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .about .contents .buttons {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+  .about .about-me {
+    z-index: 10;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 6;
+    grid-row: 1/7;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1/4;
+    background-color: white;
+    -webkit-clip-path: polygon(100% 0%, 100% 45%, 70% 100%, 18% 100%, 80% 0%);
+            clip-path: polygon(100% 0%, 100% 45%, 70% 100%, 18% 100%, 80% 0%);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-blend-mode: overlay;
+    position: relative;
+  }
+  .about .about-me .about-illus {
+    width: clamp(20em, 65%, 25em);
+    position: absolute;
+    bottom: 0;
+    mix-blend-mode: luminosity;
+    opacity: 0.9;
+  }
+  .about .message {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
+    grid-row: 6/7;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    position: relative;
+  }
+  .about .message img {
+    position: absolute;
+    top: 0em;
+    left: 10em;
+  }
+  .about .page-indi {
+    z-index: 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
+    grid-row: 6/7;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+  }
+  .about .page-indi img {
+    width: 8em;
+  }
+  .animate-lines {
+    display: none;
+  }
+  .animate-lines img {
+    display: none;
+  }
+  section.contact {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 7em 32em 2.3fr 1.8fr 2.5fr 2fr;
+        grid-template-rows: 7em 32em 2.3fr 1.8fr 2.5fr 2fr;
+    -ms-grid-columns: 1fr 2.9fr 7.1fr 3.5fr 6.85fr 1fr;
+        grid-template-columns: 1fr 2.9fr 7.1fr 3.5fr 6.85fr 1fr;
+  }
+  section.contact .contents {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    grid-row: 2/4;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-column: 2/4;
+    -ms-grid-rows: 1fr .1fr 2.7fr;
+        grid-template-rows: 1fr .1fr 2.7fr;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  section.contact .contents .thought {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    letter-spacing: 1px;
+  }
+  section.contact .contents .animate-lines {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    padding-left: 1em;
+    width: 10em;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+  }
+  section.contact .contents .contact-info {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 70%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section.contact .contents .contact-info .mail,
+  section.contact .contents .contact-info .phno {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section.contact .contents .contact-info .icon-link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    width: 90%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    cursor: pointer;
+  }
+  section.contact .contents .contact-info .icon-link a img {
+    width: 2.5em;
+  }
+  section.contact .contents .contact-info .mail,
+  section.contact .contents .contact-info .phno {
+    text-align: start;
+  }
+  section.contact .contents .contact-info .mail .add,
+  section.contact .contents .contact-info .mail .phone,
+  section.contact .contents .contact-info .phno .add,
+  section.contact .contents .contact-info .phno .phone {
+    margin-left: 2.5em;
+    color: white;
+    font-size: 1.1em;
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+  section.contact .contents .contact-info .mail img,
+  section.contact .contents .contact-info .phno img {
+    scale: 0.9;
+    cursor: pointer;
+  }
+  section.contact .contact-form {
+    margin-left: 1em;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 3;
+    grid-row: 2/5;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 3;
+    grid-column: 4/7;
+    background-image: url("../assets/Images/corporate-business-handshake-partners.png");
+    color: white;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 3fr 6fr 1.5fr 1.5fr;
+        grid-template-rows: 3fr 6fr 1.5fr 1.5fr;
+    -ms-grid-columns: 1fr 4fr;
+        grid-template-columns: 1fr 4fr;
+  }
+  section.contact .contact-form .contact-title {
+    font-size: 2em;
+    color: #B9B9FF;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  section.contact .contact-form .info {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin-left: -1em;
+  }
+  section.contact .contact-form .info .name,
+  section.contact .contact-form .info .email,
+  section.contact .contact-form .info .message {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding: 1em;
+  }
+  section.contact .contact-form .info .name input,
+  section.contact .contact-form .info .email input,
+  section.contact .contact-form .info .message input {
+    height: 2em;
+    width: 18em;
+    color: #000;
+    padding-left: .5em;
+    border-radius: 5px;
+  }
+  section.contact .contact-form .info .message input {
+    height: 6em;
+  }
+  section.contact .contact-form .contact-but {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    padding-top: 1em;
+  }
+  section.contact .contact-form .contact-but button {
+    background: #0000CC;
+    color: white;
+    border-color: transparent;
+    border-radius: 40px;
+    cursor: pointer;
+  }
+  section.contact .get-alter {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 3;
+    grid-row: 3/6;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3/4;
+    display: none;
+  }
+  section.contact .page-indi {
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
+    grid-row: 6/7;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3/4;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    position: relative;
+  }
+  section.contact .page-indi img {
+    position: absolute;
+    left: -3em;
+    width: 8em;
+  }
+}
+
+@media only screen and (min-width: 1050px) {
+  section {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 1fr 27rem 2fr 2fr 2.5fr 1fr;
+        grid-template-rows: 1fr 27rem 2fr 2fr 2.5fr 1fr;
+    -ms-grid-columns: 1fr 2.9fr 7.1fr 3.5fr 6.85fr 1fr;
+        grid-template-columns: 1fr 2.9fr 7.1fr 3.5fr 6.85fr 1fr;
+  }
+  section .navbar {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 4;
+    grid-column: 2/6;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    -ms-grid-columns: 2.9fr 7fr 10.3fr;
+        grid-template-columns: 2.9fr 7fr 10.3fr;
+  }
+  section .navbar .logo {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    text-align: left;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section .navbar nav {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 2;
+    grid-column: 3/5;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+  section .navbar nav .nav-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 2em;
+  }
+  section .navbar nav .hamburger {
+    display: none;
+  }
+  section .contents {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 4;
+    grid-column: 2/6;
+    -ms-grid-columns: 1fr 6fr 6fr;
+        grid-template-columns: 1fr 6fr 6fr;
+    -ms-grid-rows: 1fr 1.15fr 1.22fr .65fr 1.4fr 1.18fr;
+        grid-template-rows: 1fr 1.15fr 1.22fr .65fr 1.4fr 1.18fr;
+  }
+  section .contents .intro {
+    text-align: left;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 0.5em;
+  }
+  section .contents .thought {
+    text-align: left;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    letter-spacing: 2px;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section .contents .animate-lines {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    grid-row: 4/5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+  }
+  section .contents .profession {
+    line-height: 25px;
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    grid-row: 5/6;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    text-align: left;
+    width: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    letter-spacing: 4px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section .contents .buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
+    grid-row: 6/7;
+    width: 20em;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    justify-items: flex-start;
+  }
+  section .contents .buttons a {
+    z-index: 1000;
+    width: 17rem;
+    border-radius: 2em;
+  }
+  section .contents .illustrations {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 3;
+    grid-row: 4/7;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-column: 2/4;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+    font-size: 1rem;
+  }
+  section .contents .illustrations .home-illus {
+    display: block;
+    width: clamp(30em, 75%, 45em);
+  }
+  section .scroll {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 3;
+    grid-row: 3/6;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  section .message {
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
+    grid-row: 6/7;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+    -ms-grid-column: 6;
+    -ms-grid-column-span: 1;
+    grid-column: 6/7;
+  }
+  section .message img {
+    scale: 0.7;
+  }
+  section .page-indi {
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
+    grid-row: 6/7;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+  }
+  section .page-indi img {
+    width: 8em;
+  }
+  .animate-lines {
+    width: 10em;
+    display: block;
+  }
+  section.project .contents .thought {
+    letter-spacing: 5px;
+  }
+  section.project .contents .profession {
+    letter-spacing: 5px;
+  }
+  section.project .contents .buttons a {
+    width: 12rem;
+  }
+  section.project .contents .illustrations {
+    font-size: 1rem;
+  }
+  section.project .contents .illustrations .recent-illus {
+    display: block;
+    width: clamp(20em, 35%, 25em);
+  }
+  section.project .message {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section.project .message img {
+    font-size: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-self: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: absolute;
+    top: -3em;
+  }
+  section.about {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 2fr 25rem 2.3fr 2.3fr 2.5fr 2fr;
+        grid-template-rows: 2fr 25rem 2.3fr 2.3fr 2.5fr 2fr;
+    -ms-grid-columns: 1fr 2.9fr 7.1fr 3.5fr 6.85fr 1fr;
+        grid-template-columns: 1fr 2.9fr 7.1fr 3.5fr 6.85fr 1fr;
+  }
+  section.about .contents {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 4;
+    grid-column: 2/6;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 6fr 6fr;
+        grid-template-columns: 1fr 6fr 6fr;
+    -ms-grid-rows: 1fr 1.15fr 1.22fr .65fr 1.4fr 1.18fr;
+        grid-template-rows: 1fr 1.15fr 1.22fr .65fr 1.4fr 1.18fr;
+  }
+  section.about .contents .intro {
+    text-align: left;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 0.5em;
+  }
+  section.about .contents .thought {
+    text-align: left;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    letter-spacing: 2px;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section.about .contents .animate-lines {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    grid-row: 4/5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+  }
+  section.about .contents .profession {
+    line-height: 25px;
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    grid-row: 5/6;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    text-align: left;
+    width: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    letter-spacing: 4px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section.about .contents .buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
+    grid-row: 6/7;
+    width: 20em;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    justify-items: flex-start;
+  }
+  section.about .contents .buttons a {
+    width: 17rem;
+    border-radius: 2em;
+  }
+  section.about .contents .animate-lines {
+    display: block;
+  }
+  section.about .message {
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
+    grid-row: 6/7;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 1;
+    grid-column: 4/5;
+    position: relative;
+    left: 16em;
+  }
+  section.about .message img {
+    position: absolute;
+    scale: 0.7;
+  }
+  section.about .about-me {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 6;
+    grid-row: 1/7;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 4;
+    grid-column: 3/7;
+    background-color: white;
+    -webkit-clip-path: polygon(100% 0%, 100% 45%, 70% 100%, 18% 100%, 80% 0%);
+            clip-path: polygon(100% 0%, 100% 45%, 70% 100%, 18% 100%, 80% 0%);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-blend-mode: overlay;
+  }
+  section.about .about-me .about-illus {
+    font-size: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: clamp(20em, 65%, 22em);
+    margin-right: 7rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    justify-self: center;
+    mix-blend-mode: luminosity;
+    opacity: 0.9;
+  }
+  section.about .page-indi {
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
+    grid-row: 6/7;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+  }
+  section.about .page-indi img {
+    width: 8em;
+  }
+  .watermark {
+    position: relative;
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    z-index: 2;
+  }
+  .watermark span {
+    position: absolute;
+    top: 5em;
+    left: -22em;
+  }
+  .watermark span::before {
+    content: "arbhasun";
+    color: white;
+    font-size: 20em;
+    opacity: 0.05;
+    letter-spacing: .3em;
+  }
+  section.contact {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 2fr 27rem 2.3fr 1.8fr 2.5fr 2fr;
+        grid-template-rows: 2fr 27rem 2.3fr 1.8fr 2.5fr 2fr;
+    -ms-grid-columns: 1fr 2.9fr 7.1fr 3.5fr 6.85fr 1fr;
+        grid-template-columns: 1fr 2.9fr 7.1fr 3.5fr 6.85fr 1fr;
+  }
+  section.contact .contents {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    grid-row: 2/4;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-column: 2/4;
+    -ms-grid-rows: 1fr .6fr 2.7fr;
+        grid-template-rows: 1fr .6fr 2.7fr;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  section.contact .contents .thought {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    letter-spacing: 2px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+  section.contact .contents .animate-lines {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+  }
+  section.contact .contents .contact-info {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 70%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  section.contact .contents .contact-info .mail,
+  section.contact .contents .contact-info .phno {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 45%;
+  }
+  section.contact .contents .contact-info .icon-link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 42%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  section.contact .contents .contact-info .icon-link a img {
+    width: 2em;
+  }
+  section.contact .contents .contact-info .mail,
+  section.contact .contents .contact-info .phno {
+    text-align: start;
+    font-size: .85rem;
+  }
+  section.contact .contents .contact-info .mail .add,
+  section.contact .contents .contact-info .mail .phone,
+  section.contact .contents .contact-info .phno .add,
+  section.contact .contents .contact-info .phno .phone {
+    margin-left: 2.5em;
+    color: white;
+    font-size: 1.1em;
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+  section.contact .contents .contact-info .mail img,
+  section.contact .contents .contact-info .phno img {
+    scale: 0.8;
+    cursor: pointer;
+  }
+  section.contact .contact-form {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 3;
+    grid-row: 2/5;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 3;
+    grid-column: 4/7;
+    background-image: url("../assets/Images/corporate-business-handshake-partners.png");
+    color: white;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 3fr 6fr 1.5fr 1.5fr;
+        grid-template-rows: 3fr 6fr 1.5fr 1.5fr;
+    -ms-grid-columns: 1fr 4fr;
+        grid-template-columns: 1fr 4fr;
+  }
+  section.contact .contact-form .contact-title {
+    font-size: 1.7rem;
+    color: #B9B9FF;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  section.contact .contact-form .info {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin-left: -1em;
+  }
+  section.contact .contact-form .info .name,
+  section.contact .contact-form .info .email,
+  section.contact .contact-form .info .message {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding: 1em;
+  }
+  section.contact .contact-form .info .name input,
+  section.contact .contact-form .info .email input,
+  section.contact .contact-form .info .message input {
+    height: 2em;
+    width: 18em;
+    color: #000;
+    padding-left: .5em;
+    border-radius: 5px;
+  }
+  section.contact .contact-form .info .name textarea,
+  section.contact .contact-form .info .email textarea,
+  section.contact .contact-form .info .message textarea {
+    height: 7em;
+    width: 18em;
+    color: #000;
+    padding-left: .5em;
+    border-radius: 5px;
+  }
+  section.contact .contact-form .info .message input {
+    height: 6em;
+  }
+  section.contact .contact-form .contact-but {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    padding-top: 1em;
+    font-size: 1rem;
+  }
+  section.contact .contact-form .contact-but button {
+    font-size: .85em;
+    background: #0000CC;
+    color: white;
+    width: 12em;
+    border-color: transparent;
+    border-radius: 40px;
+    cursor: pointer;
+  }
+  section.contact .get-alter {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 3;
+    grid-row: 3/6;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3/4;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: relative;
+    font-size: 1rem;
+  }
+  section.contact .get-alter img {
+    position: absolute;
+    width: 18em;
+    max-height: 10em;
+    top: 4em;
+    right: -10em;
+  }
+  section.contact .page-indi {
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
+    grid-row: 6/7;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-column: 2/4;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    position: relative;
+  }
+  section.contact .page-indi img {
+    position: absolute;
+    left: .5em;
+    width: 8em;
+  }
+}
+
+@-moz-document url-prefix() {}
+/*# sourceMappingURL=style.css.map */
