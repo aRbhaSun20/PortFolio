@@ -1,6 +1,6 @@
 :root {
   --primary-color: #007AF3;
-  --bg-color: linear-gradient(45deg, #070424, #010032, #060550);
+  --bg-color: #141414;
   --thought: 2.7rem;
   --intro: 1.6rem;
   --profession: 1rem;
@@ -15,44 +15,26 @@
 }
 
 html {
-  font-size: 18px;
-}
-
-@supports (-moz-appearance: none) and (background-attachment: local) and (not (-moz-osx-font-smoothing: auto)) {
-  html {
-    font-size: 18px;
-  }
-  a button {
-    margin-right: 15px;
-  }
-  .scroll img {
-    scale: 1.3;
-  }
+  font-family: sans-serif;
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
 }
 
 body {
   margin: 0;
-  font-family: sans-serif;
   overflow-x: hidden;
   background-position: center;
   background-size: cover;
   z-index: 1;
   background: var(--bg-image) repeat, var(--bg-color);
-  background-blend-mode: hard-light;
+  background-blend-mode: color-dodge;
   background-position: center;
-}
-
-.bg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-  opacity: 0.65;
-  z-index: 1;
 }
 
 .navbar .logo {
+  font-family: Montserrat, sans-serif;
   text-decoration: none;
   color: #F1A34F;
 }
@@ -68,15 +50,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   list-style: none;
-  width: 50%;
-  background: rgba(255, 255, 255, 0);
-  height: 100%;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: auto;
 }
 
 .nav-links li a {
@@ -84,11 +62,12 @@ body {
   text-decoration: none;
   font-size: 1rem;
   position: relative;
+  font-family: Montserrat, sans-serif;
 }
 
 .line {
-  width: 30px;
-  height: 3px;
+  width: 25px;
+  height: 2.5px;
   background: white;
   margin: 5px;
   -webkit-transition: all 1s ease-in;
@@ -101,17 +80,14 @@ body {
 
 .hamburger {
   display: none;
-  position: absolute;
   cursor: pointer;
-  right: 6%;
-  top: -0.5em;
-  width: 1.2em;
-  -webkit-transform: translate(-5%, -50%);
-          transform: translate(-5%, -50%);
+  -webkit-transition: 1s scale cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 1s scale cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-button {
-  cursor: pointer;
+.hamburger:hover {
+  position: relative;
+  scale: 1.05;
 }
 
 section {
@@ -162,7 +138,13 @@ section .buttons {
           align-items: center;
 }
 
-section .buttons button {
+section .buttons a {
+  list-style: none;
+  border-bottom: none;
+  position: relative;
+}
+
+section .buttons a button {
   background: #0000CC;
   color: white;
   border-color: transparent;
@@ -170,6 +152,7 @@ section .buttons button {
   cursor: pointer;
   z-index: 200;
   font-size: .9rem;
+  position: relative;
 }
 
 section .img-page {
@@ -182,15 +165,17 @@ section .img-page {
           justify-content: center;
 }
 
-section {
-  width: 100%;
-  min-height: 100vh;
-  z-index: 10;
-}
-
 button {
   width: 9em;
   height: 3em;
+  -webkit-transition: 1s scale cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 1s scale cubic-bezier(0.075, 0.82, 0.165, 1);
+  scale: 1;
+}
+
+button:hover {
+  position: relative;
+  scale: 1.03;
 }
 
 .message {
@@ -200,6 +185,15 @@ button {
 .home-illus {
   -webkit-transition: 0.3s width ease-in-out;
   transition: 0.3s width ease-in-out;
+}
+
+textarea {
+  padding: 0.5em 1em;
+}
+
+.cursor,
+.inner-text {
+  padding-left: .5em;
 }
 
 @media screen and (max-width: 768px) {
@@ -213,6 +207,7 @@ button {
     font-size: 1rem;
   }
   section .navbar {
+    position: fixed;
     display: -ms-grid;
     display: grid;
     -ms-grid-row: 1;
@@ -221,6 +216,10 @@ button {
     -ms-grid-column: 1;
     -ms-grid-column-span: 4;
     grid-column: 1/5;
+    width: 100%;
+    z-index: 999;
+    background-color: var(--bg-color);
+    height: 10vh;
     -ms-grid-rows: 1fr;
         grid-template-rows: 1fr;
     -ms-grid-columns: 1.2fr 2.5fr 4.35fr 1.2fr;
@@ -236,7 +235,8 @@ button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 100%;
+    width: 60%;
+    z-index: 1000;
     letter-spacing: 2px;
     text-align: center;
     -webkit-box-align: center;
@@ -248,15 +248,25 @@ button {
     -ms-grid-row-span: 1;
     grid-row: 1/2;
     -ms-grid-column: 3;
-    -ms-grid-column-span: 2;
-    grid-column: 3/5;
+    -ms-grid-column-span: 1;
+    grid-column: 3/4;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+    justify-self: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position: relative;
   }
   section .navbar nav .hamburger {
     position: absolute;
-    top: 2em;
-    right: 3em;
-    scale: .8;
+    right: 0em;
+    scale: 1;
+    background-color: transparent;
   }
   section .contents {
     display: -ms-grid;
@@ -267,7 +277,7 @@ button {
     -ms-grid-column: 2;
     -ms-grid-column-span: 2;
     grid-column: 2/4;
-    font-size: 1em;
+    font-size: 1rem;
     display: grid;
     -ms-grid-rows: 1fr 2fr 1fr 1fr;
         grid-template-rows: 1fr 2fr 1fr 1fr;
@@ -275,6 +285,7 @@ button {
         grid-template-columns: 1fr 1fr;
   }
   section .contents .intro {
+    font-size: 1.2rem;
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
     grid-row: 1/2;
@@ -287,11 +298,12 @@ button {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
   }
   section .contents .thought {
+    font-size: 2.5rem;
     -ms-grid-row: 2;
     -ms-grid-row-span: 1;
     grid-row: 2/3;
@@ -309,6 +321,7 @@ button {
     letter-spacing: -1.2px;
   }
   section .contents .profession {
+    font-size: .9rem;
     -ms-grid-row: 3;
     -ms-grid-row-span: 1;
     grid-row: 3/4;
@@ -340,6 +353,7 @@ button {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    font-size: 1rem;
   }
   section .contents .buttons a {
     display: -webkit-box;
@@ -358,6 +372,9 @@ button {
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
     grid-column: 2/3;
+  }
+  section .contents .buttons a button {
+    font-size: .8em;
   }
   section .message {
     -ms-grid-row: 6;
@@ -397,30 +414,131 @@ button {
     -ms-grid-row: 5;
     -ms-grid-row-span: 1;
     grid-row: 5/6;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-column: 1/5;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 10em;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    z-index: 999;
+    position: fixed;
+    left: 35%;
+    bottom: 1em;
+  }
+  section .page-indi a {
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #5b5b5b;
+    width: .7em;
+    -webkit-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+    height: .7em;
+  }
+  section .page-indi .active {
+    width: .9em;
+    height: .9em;
+    background-color: white;
+  }
+  .project .contents {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
     -ms-grid-column: 2;
     -ms-grid-column-span: 2;
     grid-column: 2/4;
-  }
-  .project .buttons {
-    display: -ms-grid;
+    font-size: 1rem;
     display: grid;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-grid-rows: 1fr 2fr 1fr 1fr;
+        grid-template-rows: 1fr 2fr 1fr 1fr;
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
   }
-  .project .buttons a {
-    width: 200%;
+  .project .contents .intro {
+    font-size: 1.2rem;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
     grid-column: 1/3;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
   }
-  .project .page-indi img {
-    width: 8em;
+  .project .contents .thought {
+    font-size: 2.5rem;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-self: center;
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    letter-spacing: -1.2px;
+  }
+  .project .contents .profession {
+    font-size: .9rem;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-self: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .project .contents .buttons-pro {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    grid-row: 4/5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 1rem;
+  }
+  .project .contents .buttons-pro a button {
+    background: #0000CC;
+    color: white;
+    border-color: transparent;
+    border-radius: 2rem;
+    cursor: pointer;
+    z-index: 200;
+    font-size: .8rem;
   }
   .about {
     display: -ms-grid;
@@ -431,20 +549,86 @@ button {
         grid-template-columns: 1fr 8.3fr 1fr;
   }
   .about .contents {
+    display: -ms-grid;
+    display: grid;
     -ms-grid-row: 2;
-    -ms-grid-row-span: 3;
-    grid-row: 2/5;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
     -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
-    grid-column: 2/3;
-    z-index: 70;
+    -ms-grid-column-span: 2;
+    grid-column: 2/4;
+    font-size: 1rem;
+    display: grid;
+    -ms-grid-rows: 1fr 2fr 1fr 1fr;
+        grid-template-rows: 1fr 2fr 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .about .contents .thought {
+    font-size: 2.5rem;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-self: center;
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    letter-spacing: -1.2px;
   }
   .about .contents .profession {
-    padding-bottom: 3em;
-    line-height: 2em;
+    font-size: .9rem;
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    grid-row: 4/5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-self: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
-  .about .contents .buttons {
-    padding-bottom: 1em;
+  .about .contents .buttons-pro {
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    grid-row: 5/6;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 1rem;
+    position: relative;
+  }
+  .about .contents .buttons-pro a {
+    position: absolute;
+    top: 4em;
+    left: 35%;
+  }
+  .about .contents .buttons-pro a button {
+    background: #0000CC;
+    color: white;
+    border-color: transparent;
+    border-radius: 2rem;
+    cursor: pointer;
+    z-index: 200;
+    font-size: .8rem;
   }
   .about .about-me {
     -ms-grid-row: 3;
@@ -470,7 +654,7 @@ button {
     z-index: 60;
   }
   .about .about-me .about-illus {
-    width: clamp(19em, 65%, 22em);
+    width: clamp(15em, 60%, 15.5em);
     position: absolute;
     bottom: 0;
     right: 0;
@@ -501,27 +685,6 @@ button {
     position: absolute;
     top: 0em;
     left: 10em;
-  }
-  .about .page-indi {
-    z-index: 0;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-grid-row: 6;
-    -ms-grid-row-span: 1;
-    grid-row: 6/7;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
-    grid-column: 2/3;
-  }
-  .about .page-indi img {
-    width: 8em;
   }
   .contact {
     display: -ms-grid;
@@ -606,14 +769,14 @@ button {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    width: 70%;
+    width: 17em;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
     cursor: pointer;
   }
   .contact .contents .contact-info .icon-link a img {
-    width: 2.5em;
+    width: 2em;
   }
   .contact .contents .contact-info .mail,
   .contact .contents .contact-info .phno {
@@ -653,12 +816,6 @@ button {
   }
   .contact .contact-form .contact-title {
     display: none;
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
-    grid-row: 1/2;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 1;
-    grid-column: 1/2;
   }
   .contact .contact-form .info {
     -ms-grid-row: 1;
@@ -681,10 +838,7 @@ button {
             align-items: center;
     margin-left: -1em;
     position: relative;
-  }
-  .contact .contact-form .info .or::before {
-    content: "or";
-    font-size: 1.2em;
+    font-size: 0.8rem;
   }
   .contact .contact-form .info .name,
   .contact .contact-form .info .email,
@@ -704,8 +858,22 @@ button {
   .contact .contact-form .info .name input,
   .contact .contact-form .info .email input,
   .contact .contact-form .info .message input {
+    margin-top: .5em;
     height: 2em;
     width: 19em;
+    color: #000;
+    padding-left: .5em;
+    border-radius: 5px;
+    z-index: 70;
+  }
+  .contact .contact-form .info .name textarea,
+  .contact .contact-form .info .email textarea,
+  .contact .contact-form .info .message textarea {
+    margin-top: .5em;
+    min-height: 2em;
+    max-height: 7em;
+    min-width: 19em;
+    max-width: 19em;
     color: #000;
     padding-left: .5em;
     border-radius: 5px;
@@ -733,13 +901,13 @@ button {
             justify-content: center;
   }
   .contact .contact-form .contact-but button {
+    font-size: .8rem;
     background: #0000CC;
     color: white;
     border-color: transparent;
     border-radius: 2rem;
     cursor: pointer;
     z-index: 200;
-    font-size: .9rem;
   }
   .contact .get-alter {
     -ms-grid-row: 3;
@@ -749,26 +917,6 @@ button {
     -ms-grid-column-span: 1;
     grid-column: 3/4;
     display: none;
-  }
-  .contact .page-indi {
-    -ms-grid-row: 7;
-    -ms-grid-row-span: 1;
-    grid-row: 7/8;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
-    grid-column: 2/3;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  .contact .page-indi img {
-    width: 8em;
   }
   .contact .get-alter {
     display: none;
@@ -816,6 +964,7 @@ button {
     clip-path: circle(150% at 90% -10%);
     -webkit-clip-path: circle(150% at 90% -10%);
     pointer-events: all;
+    cursor: pointer;
   }
   .nav-links li {
     opacity: 0;
@@ -830,22 +979,31 @@ button {
     display: fixed;
     color: black;
     font-size: 25px;
-    opacity: 0.8;
-  }
-  .nav-links li a:hover {
-    opacity: 1;
+    cursor: pointer;
   }
   .nav-links li:nth-child(1) {
-    -webkit-transition: all 0.5s ease-in-out 0.2s;
-    transition: all 0.5s ease-in-out 0.2s;
+    -webkit-transition: all 10ms ease-in-out 0.2s;
+    transition: all 10ms ease-in-out 0.2s;
+    opacity: .6;
+  }
+  .nav-links li:nth-child(1):hover {
+    opacity: 1;
   }
   .nav-links li:nth-child(2) {
-    -webkit-transition: all 0.5s ease 0.4s;
-    transition: all 0.5s ease 0.4s;
+    -webkit-transition: all 10ms ease 0.4s;
+    transition: all 10ms ease 0.4s;
+    opacity: .6;
+  }
+  .nav-links li:nth-child(2):hover {
+    opacity: 1;
   }
   .nav-links li:nth-child(3) {
-    -webkit-transition: all 0.5s ease 0.6s;
-    transition: all 0.5s ease 0.6s;
+    -webkit-transition: all 10ms ease 0.6s;
+    transition: all 10ms ease 0.6s;
+    opacity: .6;
+  }
+  .nav-links li:nth-child(3):hover {
+    opacity: 1;
   }
   li.fade {
     opacity: 1;
@@ -858,8 +1016,8 @@ button {
     display: grid;
     -ms-grid-rows: 1.3fr 6.5fr .6fr 3fr 1fr;
         grid-template-rows: 1.3fr 6.5fr .6fr 3fr 1fr;
-    -ms-grid-columns: 1.2fr 2.5fr 4.35fr 1.2fr;
-        grid-template-columns: 1.2fr 2.5fr 4.35fr 1.2fr;
+    -ms-grid-columns: 8vw 2.5fr 4.35fr 8vw;
+        grid-template-columns: 8vw 2.5fr 4.35fr 8vw;
   }
   section .navbar {
     display: -ms-grid;
@@ -870,18 +1028,24 @@ button {
     -ms-grid-column: 2;
     -ms-grid-column-span: 4;
     grid-column: 2/6;
+    position: fixed;
+    z-index: 2000;
+    background-color: var(--bg-color);
+    width: 100%;
+    height: 10vh;
     -ms-grid-rows: 1fr;
         grid-template-rows: 1fr;
-    -ms-grid-columns: 2.9fr 7fr 10.3fr;
-        grid-template-columns: 2.9fr 7fr 10.3fr;
+    -ms-grid-columns: 8vw 2.9fr 7fr 10.3fr 8vw;
+        grid-template-columns: 8vw 2.9fr 7fr 10.3fr 8vw;
   }
   section .navbar .logo {
+    z-index: 2001;
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
     grid-row: 1/2;
-    -ms-grid-column: 1;
+    -ms-grid-column: 2;
     -ms-grid-column-span: 2;
-    grid-column: 1/3;
+    grid-column: 2/4;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -897,13 +1061,16 @@ button {
     -ms-grid-row-span: 1;
     grid-row: 1/2;
     -ms-grid-column: 3;
-    -ms-grid-column-span: 2;
-    grid-column: 3/5;
+    -ms-grid-column-span: 1;
+    grid-column: 3/4;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-line-pack: center;
         align-content: center;
+    width: 50%;
+    justify-self: flex-end;
+    margin-right: 2em;
   }
   section .navbar nav .nav-links {
     display: -webkit-box;
@@ -915,13 +1082,9 @@ button {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding-top: 2em;
   }
   section .navbar nav .hamburger {
     display: none;
-  }
-  section .page-indi img {
-    width: 8em;
   }
   section .contents {
     display: -ms-grid;
@@ -932,15 +1095,121 @@ button {
     -ms-grid-column: 2;
     -ms-grid-column-span: 2;
     grid-column: 2/4;
+    font-size: 1rem;
+    display: grid;
+    height: 90%;
+    -ms-grid-rows: 1fr 2fr 1fr 1fr;
+        grid-template-rows: 1fr 2fr 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  section .contents .intro {
+    font-size: 1.2rem;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  section .contents .thought {
+    font-size: 2.5rem;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-self: center;
     text-align: center;
-    -ms-flex-line-pack: distribute;
-        align-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    letter-spacing: -1.2px;
+  }
+  section .contents .animate-lines {
+    display: block;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    width: 10em;
   }
   section .contents .profession {
-    line-height: 20px;
+    font-size: .9rem;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-self: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  section .contents .buttons {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    grid-row: 4/5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 1rem;
+    height: 100%;
+    width: 60%;
+  }
+  section .contents .buttons a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  section .contents .buttons a:nth-child(1) {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+  }
+  section .contents .buttons a:nth-child(2) {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+  }
+  section .contents .buttons a button {
+    font-size: .8em;
   }
   section .message {
     -ms-grid-row: 6;
@@ -980,39 +1249,147 @@ button {
     -ms-grid-row: 5;
     -ms-grid-row-span: 1;
     grid-row: 5/6;
-    -ms-grid-column: 2;
+    -ms-grid-column: 3;
     -ms-grid-column-span: 1;
-    grid-column: 2/3;
+    grid-column: 3/4;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 10em;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    z-index: 999;
+    position: fixed;
+    right: 5%;
+    bottom: 1em;
+  }
+  section .page-indi a {
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #5b5b5b;
+    width: .7em;
+    -webkit-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+    height: .7em;
+  }
+  section .page-indi .active {
+    width: .9em;
+    height: .9em;
+    background-color: white;
   }
   section .illustrations {
     display: none;
   }
-  .project .buttons {
+  .project .contents {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-column: 2/4;
+    font-size: 1rem;
+    display: grid;
+    -ms-grid-rows: 1fr 2fr 1fr 1fr;
+        grid-template-rows: 1fr 2fr 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .project .contents .intro {
+    font-size: 1.2rem;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
   }
-  .project .page-indi img {
-    width: 8em;
+  .project .contents .thought {
+    font-size: 2.5rem;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-self: center;
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    letter-spacing: -1.2px;
+  }
+  .project .contents .profession {
+    font-size: .9rem;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-self: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .project .contents .buttons-pro {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    grid-row: 4/5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 1rem;
+  }
+  .project .contents .buttons-pro a button {
+    background: #0000CC;
+    color: white;
+    border-color: transparent;
+    border-radius: 2rem;
+    cursor: pointer;
+    z-index: 200;
+    font-size: .8rem;
   }
   .about {
     display: -ms-grid;
     display: grid;
     -ms-grid-rows: 1fr .77fr 1.77fr 2.23fr 5.15fr 1fr;
         grid-template-rows: 1fr .77fr 1.77fr 2.23fr 5.15fr 1fr;
-    -ms-grid-columns: 1fr 8.3fr 1fr;
-        grid-template-columns: 1fr 8.3fr 1fr;
+    -ms-grid-columns: 8vw 8.3fr 1fr;
+        grid-template-columns: 8vw 8.3fr 1fr;
   }
   .about .contents {
-    -ms-grid-row: 2;
+    -ms-grid-row: 3;
     -ms-grid-row-span: 3;
-    grid-row: 2/5;
+    grid-row: 3/6;
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
     grid-column: 2/3;
@@ -1020,10 +1397,10 @@ button {
     margin: 0;
     display: -ms-grid;
     display: grid;
-    -ms-grid-rows: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+    -ms-grid-rows: (1fr)[4];
+        grid-template-rows: repeat(4, 1fr);
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
   }
   .about .contents .thought {
     -ms-grid-row: 1;
@@ -1038,6 +1415,19 @@ button {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    justify-self: start;
+  }
+  .about .contents .animate-lines {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    grid-row: 1/3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    justify-self: flex-start;
   }
   .about .contents .profession {
     -ms-grid-row: 2;
@@ -1049,11 +1439,14 @@ button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    text-align: justify;
+    line-height: 1.5em;
+    justify-self: start;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
   }
-  .about .contents .buttons {
+  .about .contents .buttons-pro {
     -ms-grid-row: 3;
     -ms-grid-row-span: 1;
     grid-row: 3/4;
@@ -1066,6 +1459,15 @@ button {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: start;
+  }
+  .about .contents .buttons-pro a button {
+    background: #0000CC;
+    color: white;
+    border-color: transparent;
+    border-radius: 2rem;
+    cursor: pointer;
+    z-index: 200;
+    font-size: .8rem;
   }
   .about .about-me {
     z-index: 10;
@@ -1091,9 +1493,10 @@ button {
     position: relative;
   }
   .about .about-me .about-illus {
-    width: clamp(20em, 65%, 25em);
+    width: clamp(20em, 50%, 22em);
     position: absolute;
     bottom: 0;
+    right: 0;
     mix-blend-mode: luminosity;
     opacity: 0.9;
   }
@@ -1122,287 +1525,260 @@ button {
     top: 0em;
     left: 10em;
   }
-  .about .page-indi {
-    z-index: 0;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-grid-row: 6;
-    -ms-grid-row-span: 1;
-    grid-row: 6/7;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
-    grid-column: 2/3;
-  }
-  .about .page-indi img {
-    width: 8em;
-  }
   .animate-lines {
     display: none;
   }
   .animate-lines img {
     display: none;
   }
-  section.contact {
+  .contact {
     display: -ms-grid;
     display: grid;
-    -ms-grid-rows: 7em 32em 2.3fr 1.8fr 2.5fr 2fr;
-        grid-template-rows: 7em 32em 2.3fr 1.8fr 2.5fr 2fr;
-    -ms-grid-columns: 1fr 2.9fr 7.1fr 3.5fr 6.85fr 1fr;
-        grid-template-columns: 1fr 2.9fr 7.1fr 3.5fr 6.85fr 1fr;
+    -ms-grid-rows: .9fr 7fr .9fr;
+        grid-template-rows: .9fr 7fr .9fr;
+    -ms-grid-columns: 8vw 3.2fr 3.2fr 8vw;
+        grid-template-columns: 8vw 3.2fr 3.2fr 8vw;
   }
-  section.contact .contents {
+  .contact .contents {
     display: -ms-grid;
     display: grid;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    -ms-grid-rows: .7fr 1fr 2fr .7fr;
+        grid-template-rows: .7fr 1fr 2fr .7fr;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    position: relative;
+  }
+  .contact .contents .thought {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: start;
+    justify-self: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .contact .contents .animate-lines {
+    display: block;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    width: 10em;
+    justify-self: flex-start;
+  }
+  .contact .contents .contact-info {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contact .contents .contact-info .mail,
+  .contact .contents .contact-info .phno {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+  }
+  .contact .contents .contact-info .icon-link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 17em;
+    justify-self: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    cursor: pointer;
+  }
+  .contact .contents .contact-info .icon-link a img {
+    width: 2em;
+  }
+  .contact .contents .contact-info .mail .add,
+  .contact .contents .contact-info .mail .phone,
+  .contact .contents .contact-info .phno .add,
+  .contact .contents .contact-info .phno .phone {
+    margin-left: 2.5em;
+    color: white;
+    opacity: 0.7;
+    font-size: .9em;
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+  .contact .contents .contact-info .mail img,
+  .contact .contents .contact-info .phno img {
+    scale: 0.7;
+    cursor: pointer;
+  }
+  .contact .contact-form {
+    padding-top: 1em;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3/4;
+    color: white;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 1fr 1fr 5fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 5fr 1fr 1fr;
+    -ms-grid-columns: 1fr 5fr 1fr;
+        grid-template-columns: 1fr 5fr 1fr;
+  }
+  .contact .contact-form .contact-title {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    display: block;
+    text-align: start;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    font-size: 1.5rem;
+    color: #B9B9FF;
+  }
+  .contact .contact-form .info {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 2;
+    grid-row: 3/5;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-column: 2/4;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-left: -1em;
+    position: relative;
+    font-size: 0.8rem;
+  }
+  .contact .contact-form .info .name,
+  .contact .contact-form .info .email,
+  .contact .contact-form .info .message {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding: 1em;
+  }
+  .contact .contact-form .info .name input,
+  .contact .contact-form .info .email input,
+  .contact .contact-form .info .message input {
+    margin-top: .5em;
+    height: 2em;
+    width: 20em;
+    color: #000;
+    padding-left: .5em;
+    border-radius: 5px;
+    z-index: 70;
+  }
+  .contact .contact-form .info .name textarea,
+  .contact .contact-form .info .email textarea,
+  .contact .contact-form .info .message textarea {
+    margin-top: .5em;
+    min-height: 2em;
+    max-height: 13em;
+    height: 5em;
+    min-width: 20em;
+    max-width: 20em;
+    color: #000;
+    padding-left: .5em;
+    border-radius: 5px;
+    z-index: 70;
+  }
+  .contact .contact-form .info .message input {
+    height: 4em;
+  }
+  .contact .contact-form .contact-but {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 2;
+    grid-row: 4/6;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    padding-top: 1em;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
+  .contact .contact-form .contact-but button {
+    font-size: .8rem;
+    background: #0000CC;
+    color: white;
+    border-color: transparent;
+    border-radius: 2rem;
+    cursor: pointer;
+    z-index: 200;
+  }
+  .contact .get-alter {
     -ms-grid-row: 2;
     -ms-grid-row-span: 2;
     grid-row: 2/4;
     -ms-grid-column: 2;
     -ms-grid-column-span: 2;
     grid-column: 2/4;
-    -ms-grid-rows: 1fr .1fr 2.7fr;
-        grid-template-rows: 1fr .1fr 2.7fr;
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+    display: block;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
   }
-  section.contact .contents .thought {
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
-    grid-row: 1/2;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 1;
-    grid-column: 1/2;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    letter-spacing: 1px;
-  }
-  section.contact .contents .animate-lines {
-    -ms-grid-row: 2;
-    -ms-grid-row-span: 1;
-    grid-row: 2/3;
-    padding-left: 1em;
-    width: 10em;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 1;
-    grid-column: 1/2;
-  }
-  section.contact .contents .contact-info {
-    -ms-grid-row: 3;
-    -ms-grid-row-span: 1;
-    grid-row: 3/4;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 1;
-    grid-column: 1/2;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    height: 70%;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  section.contact .contents .contact-info .mail,
-  section.contact .contents .contact-info .phno {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: left;
-        -ms-flex-pack: left;
-            justify-content: left;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  section.contact .contents .contact-info .icon-link {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    width: 90%;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    cursor: pointer;
-  }
-  section.contact .contents .contact-info .icon-link a img {
-    width: 2.5em;
-  }
-  section.contact .contents .contact-info .mail,
-  section.contact .contents .contact-info .phno {
-    text-align: start;
-  }
-  section.contact .contents .contact-info .mail .add,
-  section.contact .contents .contact-info .mail .phone,
-  section.contact .contents .contact-info .phno .add,
-  section.contact .contents .contact-info .phno .phone {
-    margin-left: 2.5em;
-    color: white;
-    font-size: 1.1em;
-    letter-spacing: 2px;
-    cursor: pointer;
-  }
-  section.contact .contents .contact-info .mail img,
-  section.contact .contents .contact-info .phno img {
-    scale: 0.9;
-    cursor: pointer;
-  }
-  section.contact .contact-form {
-    margin-left: 1em;
-    -ms-grid-row: 2;
-    -ms-grid-row-span: 3;
-    grid-row: 2/5;
-    -ms-grid-column: 4;
-    -ms-grid-column-span: 3;
-    grid-column: 4/7;
-    background-image: url("../assets/Images/corporate-business-handshake-partners.png");
-    color: white;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-rows: 3fr 6fr 1.5fr 1.5fr;
-        grid-template-rows: 3fr 6fr 1.5fr 1.5fr;
-    -ms-grid-columns: 1fr 4fr;
-        grid-template-columns: 1fr 4fr;
-  }
-  section.contact .contact-form .contact-title {
-    font-size: 2em;
-    color: #B9B9FF;
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
-    grid-row: 1/2;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
-    grid-column: 2/3;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-  }
-  section.contact .contact-form .info {
-    -ms-grid-row: 2;
-    -ms-grid-row-span: 1;
-    grid-row: 2/3;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
-    grid-column: 2/3;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    margin-left: -1em;
-  }
-  section.contact .contact-form .info .name,
-  section.contact .contact-form .info .email,
-  section.contact .contact-form .info .message {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    padding: 1em;
-  }
-  section.contact .contact-form .info .name input,
-  section.contact .contact-form .info .email input,
-  section.contact .contact-form .info .message input {
-    height: 2em;
-    width: 18em;
-    color: #000;
-    padding-left: .5em;
-    border-radius: 5px;
-  }
-  section.contact .contact-form .info .message input {
-    height: 6em;
-  }
-  section.contact .contact-form .contact-but {
-    -ms-grid-row: 3;
-    -ms-grid-row-span: 1;
-    grid-row: 3/4;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
-    grid-column: 2/3;
-    padding-top: 1em;
-  }
-  section.contact .contact-form .contact-but button {
-    background: #0000CC;
-    color: white;
-    border-color: transparent;
-    border-radius: 40px;
-    cursor: pointer;
-  }
-  section.contact .get-alter {
-    -ms-grid-row: 3;
-    -ms-grid-row-span: 3;
-    grid-row: 3/6;
-    -ms-grid-column: 3;
-    -ms-grid-column-span: 1;
-    grid-column: 3/4;
-    display: none;
-  }
-  section.contact .page-indi {
-    -ms-grid-row: 6;
-    -ms-grid-row-span: 1;
-    grid-row: 6/7;
-    -ms-grid-column: 3;
-    -ms-grid-column-span: 1;
-    grid-column: 3/4;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    position: relative;
-  }
-  section.contact .page-indi img {
-    position: absolute;
-    left: -3em;
-    width: 8em;
+  .contact .get-alter img {
+    width: 12em;
   }
 }
 
@@ -1418,59 +1794,67 @@ button {
   section .navbar {
     display: -ms-grid;
     display: grid;
+    position: fixed;
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
     grid-row: 1/2;
     -ms-grid-column: 2;
     -ms-grid-column-span: 4;
     grid-column: 2/6;
+    background-color: var(--bg-color);
+    z-index: 2000;
     -ms-grid-rows: 1fr;
         grid-template-rows: 1fr;
-    -ms-grid-columns: 2.9fr 7fr 10.3fr;
-        grid-template-columns: 2.9fr 7fr 10.3fr;
+    -ms-grid-columns: .8fr 7fr 10.3fr 1fr;
+        grid-template-columns: .8fr 7fr 10.3fr 1fr;
+    width: 100%;
+    height: 10vh;
   }
   section .navbar .logo {
+    z-index: 2001;
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
     grid-row: 1/2;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 2;
-    grid-column: 1/3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     width: 100%;
+    height: 100%;
     font-size: 1.2rem;
     letter-spacing: 4px;
     text-align: left;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
   }
   section .navbar nav {
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
     grid-row: 1/2;
     -ms-grid-column: 3;
-    -ms-grid-column-span: 2;
-    grid-column: 3/5;
+    -ms-grid-column-span: 1;
+    grid-column: 3/4;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-line-pack: center;
-        align-content: center;
+    width: 50%;
+    margin-left: 50%;
   }
   section .navbar nav .nav-links {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 100%;
     -ms-flex-pack: distribute;
         justify-content: space-around;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding-top: 2em;
   }
   section .navbar nav .hamburger {
     display: none;
@@ -1490,16 +1874,20 @@ button {
         grid-template-rows: 1fr 1.15fr 1.22fr .65fr 1.4fr 1.18fr;
   }
   section .contents .intro {
-    text-align: left;
+    text-align: justify;
+    width: 100%;
     -ms-grid-row: 2;
     -ms-grid-row-span: 1;
     grid-row: 2/3;
     -ms-grid-column: 1;
-    -ms-grid-column-span: 2;
-    grid-column: 1/3;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -1520,6 +1908,10 @@ button {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    width: 100%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
   }
   section .contents .animate-lines {
     -ms-grid-row: 4;
@@ -1528,6 +1920,9 @@ button {
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
     grid-column: 1/2;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
   }
   section .contents .profession {
     line-height: 25px;
@@ -1539,6 +1934,7 @@ button {
     grid-column: 1/3;
     text-align: left;
     width: 80%;
+    padding: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1546,6 +1942,10 @@ button {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    justify-self: start;
   }
   section .contents .buttons {
     display: -webkit-box;
@@ -1567,6 +1967,14 @@ button {
     z-index: 1000;
     width: 17rem;
     border-radius: 2em;
+  }
+  section .contents .buttons a button {
+    background: #0000CC;
+    color: white;
+    border-color: transparent;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-size: .9rem;
   }
   section .contents .illustrations {
     -ms-grid-row: 4;
@@ -1619,29 +2027,140 @@ button {
   section .message img {
     scale: 0.7;
   }
-  section .page-indi {
-    -ms-grid-row: 6;
-    -ms-grid-row-span: 1;
-    grid-row: 6/7;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
-    grid-column: 2/3;
+  .page-indi {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 10em;
+    bottom: 10%;
+    right: 10%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: fixed;
+    z-index: 999;
   }
-  section .page-indi img {
-    width: 8em;
+  .page-indi a {
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #5b5b5b;
+    width: .7em;
+    -webkit-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+    height: .7em;
+  }
+  .page-indi .active {
+    width: .9em;
+    height: .9em;
+    background-color: white;
   }
   .animate-lines {
     width: 10em;
     display: block;
   }
+  section.project .contents {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 4;
+    grid-column: 2/6;
+    -ms-grid-columns: 1fr 6fr 6fr;
+        grid-template-columns: 1fr 6fr 6fr;
+    -ms-grid-rows: 1fr 1.15fr 1.22fr .65fr 1.4fr 1.18fr;
+        grid-template-rows: 1fr 1.15fr 1.22fr .65fr 1.4fr 1.18fr;
+  }
+  section.project .contents .intro {
+    text-align: left;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 0.5em;
+  }
   section.project .contents .thought {
-    letter-spacing: 5px;
+    text-align: left;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    letter-spacing: 2px;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    justify-self: start;
+  }
+  section.project .contents .animate-lines {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    grid-row: 4/5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
   }
   section.project .contents .profession {
-    letter-spacing: 5px;
+    line-height: 25px;
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    grid-row: 5/6;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    text-align: left;
+    width: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    letter-spacing: 4px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    justify-self: start;
   }
-  section.project .contents .buttons a {
-    width: 12rem;
+  section.project .contents .buttons-pro {
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 1;
+    grid-row: 6/7;
+    width: 20em;
+    -ms-grid-column: 1;
+    grid-column: 1/1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    z-index: 200;
+  }
+  section.project .contents .buttons-pro button {
+    background: #0000CC;
+    color: white;
+    border-color: transparent;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-size: .9rem;
   }
   section.project .contents .illustrations {
     font-size: 1rem;
@@ -1754,13 +2273,14 @@ button {
         -ms-flex-align: center;
             align-items: center;
   }
-  section.about .contents .buttons {
+  section.about .contents .buttons-pro {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-grid-row: 6;
     -ms-grid-row-span: 1;
     grid-row: 6/7;
+    z-index: 1000;
     width: 20em;
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
@@ -1770,9 +2290,17 @@ button {
             justify-content: space-between;
     justify-items: flex-start;
   }
-  section.about .contents .buttons a {
+  section.about .contents .buttons-pro a {
     width: 17rem;
     border-radius: 2em;
+  }
+  section.about .contents .buttons-pro button {
+    background: #0000CC;
+    color: white;
+    border-color: transparent;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-size: .85rem;
   }
   section.about .contents .animate-lines {
     display: block;
@@ -1835,17 +2363,6 @@ button {
     mix-blend-mode: luminosity;
     opacity: 0.9;
   }
-  section.about .page-indi {
-    -ms-grid-row: 6;
-    -ms-grid-row-span: 1;
-    grid-row: 6/7;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
-    grid-column: 2/3;
-  }
-  section.about .page-indi img {
-    width: 8em;
-  }
   .watermark {
     position: relative;
     margin: auto;
@@ -1869,7 +2386,7 @@ button {
     content: "arbhasun";
     color: white;
     font-size: 20em;
-    opacity: 0.05;
+    opacity: 0.03;
     letter-spacing: .3em;
   }
   section.contact {
@@ -1879,20 +2396,26 @@ button {
         grid-template-rows: 2fr 27rem 2.3fr 1.8fr 2.5fr 2fr;
     -ms-grid-columns: 1fr 2.9fr 7.1fr 3.5fr 6.85fr 1fr;
         grid-template-columns: 1fr 2.9fr 7.1fr 3.5fr 6.85fr 1fr;
+    position: relative;
   }
   section.contact .contents {
     display: -ms-grid;
     display: grid;
     -ms-grid-row: 2;
-    -ms-grid-row-span: 2;
-    grid-row: 2/4;
+    -ms-grid-row-span: 4;
+    grid-row: 2/6;
     -ms-grid-column: 2;
     -ms-grid-column-span: 2;
     grid-column: 2/4;
-    -ms-grid-rows: 1fr .6fr 2.7fr;
-        grid-template-rows: 1fr .6fr 2.7fr;
+    height: 70%;
+    -ms-grid-rows: 1fr .8fr 4fr;
+        grid-template-rows: 1fr .8fr 4fr;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
+    position: relative;
+    -ms-grid-row-align: center;
+        align-self: center;
+    margin-top: 4em;
   }
   section.contact .contents .thought {
     -ms-grid-row: 1;
@@ -1906,11 +2429,16 @@ button {
     display: -ms-flexbox;
     display: flex;
     text-align: start;
+    -ms-flex-item-align: center;
+        align-self: center;
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: start;
   }
   section.contact .contents .animate-lines {
+    position: absolute;
+    top: 1em;
+    width: 8em;
     -ms-grid-row: 2;
     -ms-grid-row-span: 1;
     grid-row: 2/3;
@@ -1928,6 +2456,7 @@ button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    width: 100%;
     height: 70%;
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
@@ -1939,6 +2468,8 @@ button {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
   }
   section.contact .contents .contact-info .mail,
   section.contact .contents .contact-info .phno {
@@ -1952,6 +2483,7 @@ button {
         -ms-flex-align: center;
             align-items: center;
     width: 45%;
+    z-index: 1000;
   }
   section.contact .contents .contact-info .icon-link {
     display: -webkit-box;
@@ -2001,10 +2533,10 @@ button {
     color: white;
     display: -ms-grid;
     display: grid;
-    -ms-grid-rows: 3fr 6fr 1.5fr 1.5fr;
-        grid-template-rows: 3fr 6fr 1.5fr 1.5fr;
-    -ms-grid-columns: 1fr 4fr;
-        grid-template-columns: 1fr 4fr;
+    -ms-grid-rows: 1.5fr 6fr 1.5fr 1fr;
+        grid-template-rows: 1.5fr 6fr 1.5fr 1fr;
+    -ms-grid-columns: 1fr 4fr 1fr;
+        grid-template-columns: 1fr 4fr 1fr;
   }
   section.contact .contact-form .contact-title {
     font-size: 1.7rem;
@@ -2064,6 +2596,7 @@ button {
         -ms-flex-align: start;
             align-items: flex-start;
     padding: 1em;
+    font-size: 1rem;
   }
   section.contact .contact-form .info .name input,
   section.contact .contact-form .info .email input,
@@ -2077,8 +2610,10 @@ button {
   section.contact .contact-form .info .name textarea,
   section.contact .contact-form .info .email textarea,
   section.contact .contact-form .info .message textarea {
-    height: 7em;
-    width: 18em;
+    min-height: 2em;
+    max-height: 7em;
+    min-width: 18em;
+    max-width: 35em;
     color: #000;
     padding-left: .5em;
     border-radius: 5px;
@@ -2095,63 +2630,82 @@ button {
     grid-column: 2/3;
     padding-top: 1em;
     font-size: 1rem;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
   section.contact .contact-form .contact-but button {
-    font-size: .85em;
     background: #0000CC;
     color: white;
     width: 12em;
+    font-size: .9rem;
     border-color: transparent;
     border-radius: 40px;
-    cursor: pointer;
   }
   section.contact .get-alter {
-    -ms-grid-row: 3;
-    -ms-grid-row-span: 3;
-    grid-row: 3/6;
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 2;
+    grid-row: 4/6;
     -ms-grid-column: 3;
-    -ms-grid-column-span: 1;
-    grid-column: 3/4;
+    -ms-grid-column-span: 2;
+    grid-column: 3/5;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    position: relative;
-    font-size: 1rem;
-  }
-  section.contact .get-alter img {
-    position: absolute;
-    width: 18em;
-    max-height: 10em;
-    top: 4em;
-    right: -10em;
-  }
-  section.contact .page-indi {
-    -ms-grid-row: 6;
-    -ms-grid-row-span: 1;
-    grid-row: 6/7;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 2;
-    grid-column: 2/4;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    justify-self: center;
     position: relative;
   }
-  section.contact .page-indi img {
+  section.contact .get-alter img {
     position: absolute;
-    left: .5em;
-    width: 8em;
+    width: 14em;
+    bottom: 0em;
+    left: 1em;
+    max-height: 10em;
+  }
+  section.contact .watermark {
+    position: absolute;
+    bottom: 20vh;
+    left: 30vh;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 6;
+    grid-column: 1/7;
   }
 }
 
-@-moz-document url-prefix() {}
+@-moz-document url-prefix() {
+  @media screen and (max-width: 768px) {
+    .cont {
+      scroll-snap-align: center;
+      width: 100%;
+      height: 100vh;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    .cont {
+      scroll-snap-align: center;
+      width: 100%;
+      height: 100vh;
+    }
+  }
+  @media only screen and (min-width: 1050px) {
+    .cont {
+      scroll-snap-align: center;
+      width: 100%;
+      height: 100vh;
+    }
+  }
+}
 /*# sourceMappingURL=style.css.map */

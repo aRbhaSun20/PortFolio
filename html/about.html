@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="../styles/bootstrap.min.css" />
+    <title>Arbhasun-Banerjee</title>
     <link rel="stylesheet" href="../styles/style.css" />
     <link rel="stylesheet" href="../styles/about.css" />
+    <script src="../scripts/platform.js"></script>
+
   </head>
 
   <body>
@@ -21,9 +22,9 @@
             <div class="line"></div>
           </div>
           <ul class="nav-links">
-            <li><a href="../index.html">Project</a></li>
-            <li><a href="../index.html">About</a></li>
-            <li><a href="../index.html">Contact</a></li>
+            <li><a href="../index.html#project">Project</a></li>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -67,9 +68,9 @@
           class="scroll-black"
         />
       </div>
-      <div class="page-indi">
+      <!-- <div class="page-indi">
         <img src="../assets/Images/page3.png" alt="" class="page-indi-img" />
-      </div>
+      </div> -->
     </section>
 
     <section class="about-info">
@@ -77,8 +78,8 @@
         <div class="title">Introducing Myself</div>
         <div class="sub-title">Arbhasun Banerjee</div>
         <div class="desc">
-          Native Indian developer, born on 2000. Currently pursuing computer
-          Science Engineering from Government SKSJTI, Karnataka, India. My crush
+          Native Indian developer, born in 2000. Currently pursuing computer
+          Science Engineering from Government SKSJTI, Bangalore, Karnataka, India. My crush
           for technology and design raised at a very young age, due to the fact
           a lifeless electronic device has the capacity to change the lives of
           millions dependent on it. In 2015, my interest in designing web pages
@@ -228,50 +229,38 @@
           </div>
         </div>
       </div>
+
+      <section class="end">
+        <div class="contact-info">
+          <div class="mail">
+            <img src="../assets/icons/mail.png" alt="" />
+            <div class="add">arbhasun1606@gmail.com</div>
+          </div>
+          <div class="icon-link">
+            <a href="#">
+              <img src="../assets/icons/in.png" alt="" />
+            </a>
+            <a href="#">
+              <img src="../assets/icons/fb.png" alt="" />
+            </a>
+            <a href="#">
+              <img src="../assets/icons/git.png" alt="" />
+            </a>
+          </div>
+          <div class="phno">
+            <img src="../assets/icons/phone.png" alt="" />
+            <div class="phone">+91 - 80736 - 29055</div>
+          </div>
+        </div>
+      </section>
     </section>
 
-    <div class="end">
-      <div class="contact-info">
-        <div class="mail">
-          <img src="../assets/icons/mail.png" alt="" />
-          <div class="add">arbhasun1606@gmail.com</div>
-        </div>
-        <div class="icon-link">
-          <a href="#">
-            <img src="../assets/icons/in.png" alt="" />
-          </a>
-          <a href="#">
-            <img src="../assets/icons/fb.png" alt="" />
-          </a>
-          <a href="#">
-            <img src="../assets/icons/git.png" alt="" />
-          </a>
-        </div>
-        <div class="phno">
-          <img src="../assets/icons/phone.png" alt="" />
-          <div class="phone">+91 - 80736 - 29055</div>
-        </div>
-      </div>
-    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/ScrollTrigger.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/TextPlugin.min.js"></script> -->
 
-    <script>
-      const hamburger = document.querySelector(".hamburger");
-      const navlinks = document.querySelector(".nav-links");
-      const links = document.querySelectorAll(".nav-links li");
-      const lines = document.querySelectorAll(".line");
-      const clouds = document.querySelectorAll(".clouds");
-      hamburger.addEventListener("click", () => {
-        navlinks.classList.toggle("open");
-        lines.forEach((line) => {
-          line.classList.toggle("open");
-        });
-
-        links.forEach((link) => {
-          link.classList.toggle("fade");
-        });
-
-        clouds.classList.toggle("open");
-      });
-    </script>
+    <script src="../scripts/navigation.js"></script>
+    <script src="../scripts/about.js"></script>
+    <script src="../scripts/end.js"></script>
   </body>
 </html>
