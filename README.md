@@ -2,7 +2,9 @@
 
 Hi, I am Arbhasun Banerjee, Computer Science Engineer.
 
-The CUrrent Repository consist of my portfolio source code with live website and associated designs.
+> WebSite https://arbhasun20.github.io/PortFolio/
+
+The Current Repository consist of my portfolio source code with live website and associated designs.
 ---
 ## Home Page Desktop View
 

@@ -49,7 +49,9 @@ body {
     width: 100%;
     height: 3rem;
 }
-
+a{
+    text-emphasis: none;
+}
 .nav-links {
     display: flex;
     list-style: none;

@@ -45,6 +45,11 @@ body {
   height: 3rem;
 }
 
+a {
+  -webkit-text-emphasis: none;
+          text-emphasis: none;
+}
+
 .nav-links {
   display: -webkit-box;
   display: -ms-flexbox;
