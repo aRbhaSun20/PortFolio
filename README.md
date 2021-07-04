@@ -2,7 +2,7 @@
 
 Hi, I am Arbhasun Banerjee, Computer Science Engineer.
 
-> WebSite https://arbhasun20.github.io/PortFolio/
+> WebSite https://arbhasun20.netlify.app/index.html
 
 The Current Repository consist of my portfolio source code with live website and associated designs.
 ---
