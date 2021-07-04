@@ -27,6 +27,8 @@ html {
 
 section.about-info {
   background-color: white;
+  width: 100vw;
+  height: 100vh;
 }
 
 section.about-info .intro-myself,
@@ -60,6 +62,8 @@ button:hover {
   section {
     display: -ms-grid;
     display: grid;
+    width: 100vw;
+    height: 100vh;
     -ms-grid-rows: 1.1fr 6.5fr .3fr 2.87fr 1fr;
         grid-template-rows: 1.1fr 6.5fr .3fr 2.87fr 1fr;
     -ms-grid-columns: 1.2fr 2.5fr 4.35fr 1.2fr;
@@ -241,6 +245,8 @@ button:hover {
   .about {
     display: -ms-grid;
     display: grid;
+    width: 100vw;
+    height: 100vh;
     -ms-grid-rows: 1fr .77fr 1.77fr 2.23fr 5.15fr 1fr;
         grid-template-rows: 1fr .77fr 1.77fr 2.23fr 5.15fr 1fr;
     -ms-grid-columns: 1fr 8.3fr 1fr;
@@ -849,6 +855,8 @@ button:hover {
   section {
     display: -ms-grid;
     display: grid;
+    width: 100vw;
+    height: 100vh;
     -ms-grid-rows: 1.3fr 6.5fr .6fr 3fr 1fr;
         grid-template-rows: 1.3fr 6.5fr .6fr 3fr 1fr;
     -ms-grid-columns: 1.2fr 2.5fr 4.35fr 1.2fr;
@@ -1041,6 +1049,8 @@ button:hover {
   .about {
     display: -ms-grid;
     display: grid;
+    width: 100vw;
+    height: 100vh;
     -ms-grid-rows: 1fr .77fr 1.77fr 2.23fr 5.15fr 1fr;
         grid-template-rows: 1fr .77fr 1.77fr 2.23fr 5.15fr 1fr;
     -ms-grid-columns: 1fr 8.3fr 1fr;
@@ -1681,15 +1691,17 @@ button:hover {
 }
 
 @media only screen and (min-width: 1050px) {
-  section.about {
+  section {
     display: -ms-grid;
     display: grid;
+    width: 100vw;
+    height: 100vh;
     -ms-grid-rows: 5em 28em 2.3fr 2.3fr 2.5fr 2fr;
         grid-template-rows: 5em 28em 2.3fr 2.3fr 2.5fr 2fr;
     -ms-grid-columns: 10vw 2.9fr 7.1fr 3.5fr 6.85fr 10vw;
         grid-template-columns: 10vw 2.9fr 7.1fr 3.5fr 6.85fr 10vw;
   }
-  section.about .navbar {
+  section .navbar {
     display: -ms-grid;
     display: grid;
     position: fixed;
@@ -1708,7 +1720,7 @@ button:hover {
     width: 100%;
     height: 10vh;
   }
-  section.about .navbar .logo {
+  section .navbar .logo {
     z-index: 2001;
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
@@ -1731,7 +1743,7 @@ button:hover {
         -ms-flex-pack: start;
             justify-content: start;
   }
-  section.about .navbar nav {
+  section .navbar nav {
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
     grid-row: 1/2;
@@ -1744,7 +1756,7 @@ button:hover {
     width: 50%;
     margin-left: 50%;
   }
-  section.about .navbar nav .nav-links {
+  section .navbar nav .nav-links {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1754,10 +1766,10 @@ button:hover {
         -ms-flex-align: center;
             align-items: center;
   }
-  section.about .navbar nav .hamburger {
+  section .navbar nav .hamburger {
     display: none;
   }
-  section.about .clouds {
+  section .clouds {
     -ms-grid-row: 2;
     -ms-grid-row-span: 1;
     grid-row: 2/3;
@@ -1766,7 +1778,7 @@ button:hover {
     grid-column: 1/7;
     opacity: 0.5;
   }
-  section.about .contents {
+  section .contents {
     padding-top: 0em;
     display: -ms-grid;
     display: grid;
@@ -1782,7 +1794,7 @@ button:hover {
     -ms-grid-rows: .3fr 1.15fr .5fr .65fr .5fr 1.18fr;
         grid-template-rows: .3fr 1.15fr .5fr .65fr .5fr 1.18fr;
   }
-  section.about .contents .back {
+  section .contents .back {
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
     grid-row: 1/2;
@@ -1796,7 +1808,7 @@ button:hover {
         -ms-flex-pack: start;
             justify-content: flex-start;
   }
-  section.about .contents .thought {
+  section .contents .thought {
     text-align: left;
     -ms-grid-row: 2;
     -ms-grid-row-span: 1;
@@ -1806,7 +1818,7 @@ button:hover {
         -ms-flex-align: center;
             align-items: center;
   }
-  section.about .contents .animate-lines {
+  section .contents .animate-lines {
     -ms-grid-row: 2;
     -ms-grid-row-span: 1;
     grid-row: 2/3;
@@ -1819,7 +1831,7 @@ button:hover {
     -ms-flex-item-align: end;
         align-self: flex-end;
   }
-  section.about .contents .profession {
+  section .contents .profession {
     line-height: 2em;
     -ms-grid-row: 4;
     -ms-grid-row-span: 1;
@@ -1837,7 +1849,7 @@ button:hover {
         -ms-flex-align: start;
             align-items: flex-start;
   }
-  section.about .contents .illustrations {
+  section .contents .illustrations {
     -ms-grid-row: 4;
     -ms-grid-row-span: 3;
     grid-row: 4/7;
@@ -1855,11 +1867,11 @@ button:hover {
             align-items: center;
     position: relative;
   }
-  section.about .contents .illustrations .home-illus {
+  section .contents .illustrations .home-illus {
     display: block;
     width: clamp(30em, 60%, 35em);
   }
-  section.about .message {
+  section .message {
     -ms-grid-row: 5;
     grid-row: 5/5;
     display: -webkit-box;
@@ -1876,13 +1888,13 @@ button:hover {
     grid-column: 6/7;
     position: relative;
   }
-  section.about .message img {
+  section .message img {
     position: absolute;
     top: 4em;
     left: -2em;
     scale: 0.7;
   }
-  section.about .scroll {
+  section .scroll {
     -ms-grid-row: 3;
     -ms-grid-row-span: 2;
     grid-row: 3/5;
@@ -1891,14 +1903,14 @@ button:hover {
     grid-column: 2/3;
     position: relative;
   }
-  section.about .scroll .scroll-img {
+  section .scroll .scroll-img {
     position: absolute;
     bottom: 1em;
   }
-  section.about .scroll .scroll-black {
+  section .scroll .scroll-black {
     display: none;
   }
-  section.about .page-indi {
+  section .page-indi {
     -ms-grid-row: 6;
     -ms-grid-row-span: 1;
     grid-row: 6/7;
@@ -1914,7 +1926,7 @@ button:hover {
             justify-content: start;
     margin: auto 0;
   }
-  section.about .nav-links li:nth-child(3) a {
+  section .nav-links li:nth-child(3) a {
     color: white;
   }
   .page-indi img {
@@ -1923,6 +1935,8 @@ button:hover {
   section.about {
     display: -ms-grid;
     display: grid;
+    width: 100vw;
+    height: 100vh;
     -ms-grid-rows: 6em 32em 2.3fr 2.3fr 2.5fr 2fr;
         grid-template-rows: 6em 32em 2.3fr 2.3fr 2.5fr 2fr;
     -ms-grid-columns: 1fr 2.9fr 7.1fr 3.5fr 6.85fr 1fr;
@@ -2008,6 +2022,7 @@ button:hover {
   }
   section.about-info {
     height: 310vh;
+    width: 100vw;
     -ms-grid-rows: 10vh 7.5fr 10vh 6fr 10vh 7.5fr 10vh 5fr;
         grid-template-rows: 10vh 7.5fr 10vh 6fr 10vh 7.5fr 10vh 5fr;
     -ms-grid-columns: 1fr 14fr 1fr;
