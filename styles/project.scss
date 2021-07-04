@@ -871,6 +871,12 @@ button {
                 justify-items: center;
                 align-items: center;
 
+                a {
+                    color: white;
+                    list-style: none;
+                    border: none;
+                }
+
                 .mail {
                     grid-row: 1/2;
                     grid-column: 1/2;
@@ -907,7 +913,12 @@ button {
                     width: 85%;
                     align-items: center;
                     justify-content: space-between;
-                    scale: .8;
+
+                    // scale: .8;
+                    img {
+                        margin-top: 1em;
+                        width: 2.5em;
+                    }
                 }
 
             }
@@ -1610,6 +1621,12 @@ button {
                 justify-items: center;
                 align-items: center;
 
+                a {
+                    color: white;
+                    list-style: none;
+                    border: none;
+                }
+
                 .mail {
                     grid-row: 1/2;
                     grid-column: 1/2;
@@ -1645,7 +1662,12 @@ button {
                     width: 85%;
                     align-items: center;
                     justify-content: space-between;
-                    scale: .8;
+
+                    // scale: .8;
+                    img {
+                        margin-top: 1em;
+                        width: 2.5em;
+                    }
                 }
 
             }
@@ -2345,6 +2367,12 @@ button {
                 justify-items: center;
                 align-items: center;
 
+                a {
+                    color: white;
+                    list-style: none;
+                    border: none;
+                }
+
                 .mail {
                     grid-row: 1/2;
                     grid-column: 1/2;
@@ -2421,7 +2449,12 @@ button {
                 width: 70%;
                 align-items: center;
                 justify-content: space-between;
-                scale: .8;
+
+                // scale: .8;
+                img {
+                    margin-top: 1em;
+                    width: 2.5em;
+                }
             }
 
         }

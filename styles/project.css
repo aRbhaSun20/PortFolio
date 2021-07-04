@@ -1071,6 +1071,11 @@ button {
         -ms-flex-align: center;
             align-items: center;
   }
+  section.project-info .end .contact-info a {
+    color: white;
+    list-style: none;
+    border: none;
+  }
   section.project-info .end .contact-info .mail {
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
@@ -1132,7 +1137,10 @@ button {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    scale: .8;
+  }
+  section.project-info .end .contact-info .icon-link img {
+    margin-top: 1em;
+    width: 2.5em;
   }
   .page-indi {
     z-index: 0;
@@ -1971,6 +1979,11 @@ button {
         -ms-flex-align: center;
             align-items: center;
   }
+  section.project-info .end .contact-info a {
+    color: white;
+    list-style: none;
+    border: none;
+  }
   section.project-info .end .contact-info .mail {
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
@@ -2032,7 +2045,10 @@ button {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    scale: .8;
+  }
+  section.project-info .end .contact-info .icon-link img {
+    margin-top: 1em;
+    width: 2.5em;
   }
   .animate-lines img {
     width: 10em;
@@ -2942,6 +2958,11 @@ button {
         -ms-flex-align: center;
             align-items: center;
   }
+  section.project-info .end .contact-info a {
+    color: white;
+    list-style: none;
+    border: none;
+  }
   section.project-info .end .contact-info .mail {
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
@@ -3079,7 +3100,10 @@ button {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    scale: .8;
+  }
+  .end .contact-info .icon-link img {
+    margin-top: 1em;
+    width: 2.5em;
   }
 }
 

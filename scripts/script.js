@@ -57,10 +57,10 @@ introductionSection
     ".main .thought",
     {
       duration: 1.5,
-      x: -900,
+      x: -1200,
       ease: "elastic.out(1,1.7)",
     },
-    "-=1.1"
+    "-=1.3"
   )
   .from(
     ".main .animate-lines",
