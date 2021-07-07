@@ -70,6 +70,7 @@ button:hover {
         grid-template-columns: 1.2fr 2.5fr 4.35fr 1.2fr;
   }
   section .navbar {
+    position: fixed;
     display: -ms-grid;
     display: grid;
     -ms-grid-row: 1;
@@ -78,27 +79,43 @@ button:hover {
     -ms-grid-column: 1;
     -ms-grid-column-span: 4;
     grid-column: 1/5;
+    width: 100%;
+    z-index: 999;
+    background-color: var(--bg-color);
+    padding-top: 1em;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
     -ms-grid-rows: 1fr;
         grid-template-rows: 1fr;
-    -ms-grid-columns: 1.2fr 2.5fr 4.35fr 1.2fr;
-        grid-template-columns: 1.2fr 2.5fr 4.35fr 1.2fr;
+    -ms-grid-columns: 3em 2.5fr 2.5fr 3em;
+        grid-template-columns: 3em 2.5fr 2.5fr 3em;
+    height: 10vh;
   }
   section .navbar .logo {
+    height: 100%;
+    -ms-flex-item-align: center;
+        align-self: center;
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
     grid-row: 1/2;
     -ms-grid-column: 2;
-    -ms-grid-column-span: 2;
-    grid-column: 2/4;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 60%;
-    letter-spacing: 2px;
+    z-index: 1000;
+    -o-object-fit: contain;
+       object-fit: contain;
     text-align: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    align-self: center;
+    justify-self: flex-start;
   }
   section .navbar nav {
     -ms-grid-row: 1;
@@ -118,12 +135,13 @@ button:hover {
         -ms-flex-align: center;
             align-items: center;
     position: relative;
+    height: 100%;
   }
   section .navbar nav .hamburger {
     position: absolute;
     right: 0em;
+    bottom: 1.2em;
     scale: 1;
-    background-color: transparent;
   }
   section .contents {
     display: -ms-grid;
@@ -209,11 +227,13 @@ button:hover {
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end;
-    z-index: 100;
+    z-index: 1000;
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
     grid-column: 2/3;
     position: relative;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
   }
   section .scroll .scroll-black {
     position: absolute;
@@ -249,8 +269,8 @@ button:hover {
     height: 100vh;
     -ms-grid-rows: 1fr .77fr 1.77fr 2.23fr 5.15fr 1fr;
         grid-template-rows: 1fr .77fr 1.77fr 2.23fr 5.15fr 1fr;
-    -ms-grid-columns: 1fr 8.3fr 1fr;
-        grid-template-columns: 1fr 8.3fr 1fr;
+    -ms-grid-columns: 10vw 80vw 10vw;
+        grid-template-columns: 10vw 80vw 10vw;
   }
   .about .contents {
     -ms-grid-row: 2;
@@ -450,11 +470,12 @@ button:hover {
     width: 19em;
   }
   section.about-info {
-    height: 425vh;
-    -ms-grid-rows: 10vh 7.5fr 10vh 7.5fr 10vh 3fr 10vh 5fr;
-        grid-template-rows: 10vh 7.5fr 10vh 7.5fr 10vh 3fr 10vh 5fr;
-    -ms-grid-columns: 7vh 14fr 7vh;
-        grid-template-columns: 7vh 14fr 7vh;
+    height: 475vh;
+    width: 100vw;
+    -ms-grid-rows: 7vh 7.5fr 10vh 7.5fr 10vh 3fr 10vh 5fr;
+        grid-template-rows: 7vh 7.5fr 10vh 7.5fr 10vh 3fr 10vh 5fr;
+    -ms-grid-columns: 10vw 80vw 10vw;
+        grid-template-columns: 10vw 80vw 10vw;
   }
   section.about-info .intro-myself {
     -ms-grid-row: 2;
@@ -465,9 +486,9 @@ button:hover {
     grid-column: 2/3;
     display: -ms-grid;
     display: grid;
-    height: 90vh;
-    -ms-grid-rows: 1fr .7fr .9fr 7.85fr 2fr 1fr;
-        grid-template-rows: 1fr .7fr .9fr 7.85fr 2fr 1fr;
+    height: 95vh;
+    -ms-grid-rows: 1fr 1fr 1fr 7fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 7fr 1fr 1fr;
     -ms-grid-columns: 1fr 8fr 1fr;
         grid-template-columns: 1fr 8fr 1fr;
   }
@@ -477,6 +498,7 @@ button:hover {
     -ms-grid-row: 2;
     -ms-grid-row-span: 1;
     grid-row: 2/3;
+    text-align: center;
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
     grid-column: 2/3;
@@ -494,6 +516,9 @@ button:hover {
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
     grid-column: 2/3;
+    justify-self: center;
+    -ms-flex-item-align: center;
+        align-self: center;
   }
   section.about-info .intro-myself .desc {
     -ms-grid-row: 4;
@@ -502,14 +527,13 @@ button:hover {
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
     grid-column: 2/3;
-    height: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    line-height: 30px;
+    line-height: 1.8em;
     letter-spacing: 1.5px;
     word-spacing: 2px;
     font-size: .75em;
@@ -536,7 +560,7 @@ button:hover {
     display: none;
   }
   section.about-info .passions {
-    height: 135vh;
+    height: 165vh;
     -ms-grid-row: 4;
     -ms-grid-row-span: 1;
     grid-row: 4/5;
@@ -545,8 +569,8 @@ button:hover {
     grid-column: 2/3;
     display: -ms-grid;
     display: grid;
-    -ms-grid-rows: .6fr 6fr .5fr;
-        grid-template-rows: .6fr 6fr .5fr;
+    -ms-grid-rows: 5vh 10vh 140vh 10vh;
+        grid-template-rows: 5vh 10vh 140vh 10vh;
     -ms-grid-columns: 1fr 8fr 1fr;
         grid-template-columns: 1fr 8fr 1fr;
     position: relative;
@@ -558,9 +582,9 @@ button:hover {
             justify-content: center;
   }
   section.about-info .passions .title {
-    -ms-grid-row: 1;
+    -ms-grid-row: 2;
     -ms-grid-row-span: 1;
-    grid-row: 1/2;
+    grid-row: 2/3;
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
     grid-column: 2/3;
@@ -574,9 +598,9 @@ button:hover {
             align-items: center;
   }
   section.about-info .passions .passion-list {
-    -ms-grid-row: 2;
+    -ms-grid-row: 3;
     -ms-grid-row-span: 1;
-    grid-row: 2/3;
+    grid-row: 3/4;
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
     grid-column: 2/3;
@@ -625,8 +649,7 @@ button:hover {
     color: #676767;
   }
   section.about-info .skills {
-    padding-top: 3em;
-    height: 60em;
+    height: 150vh;
     -ms-grid-row: 6;
     -ms-grid-row-span: 1;
     grid-row: 6/7;
@@ -635,8 +658,8 @@ button:hover {
     grid-column: 2/3;
     display: -ms-grid;
     display: grid;
-    -ms-grid-rows: 1fr 4fr 4fr 1fr;
-        grid-template-rows: 1fr 4fr 4fr 1fr;
+    -ms-grid-rows: 10vh 65vh 65vh 10vh;
+        grid-template-rows: 10vh 65vh 65vh 10vh;
     -ms-grid-columns: 1fr 8.8fr 1fr;
         grid-template-columns: 1fr 8.8fr 1fr;
   }
@@ -649,6 +672,8 @@ button:hover {
     grid-column: 2/3;
     display: -ms-grid;
     display: grid;
+    height: 65vh;
+    width: 80vw;
     -ms-grid-rows: 1fr 5fr 1fr;
         grid-template-rows: 1fr 5fr 1fr;
     -ms-grid-columns: 1fr;
@@ -672,21 +697,25 @@ button:hover {
     -ms-grid-column-span: 1;
     grid-column: 2/3;
     font-size: .75em;
+    width: 90%;
+    -ms-grid-column-align: center;
+        justify-self: center;
     text-align: justify;
     line-height: 2.5em;
     letter-spacing: 1px;
   }
   section.about-info .skills .content .explore-projects {
-    -ms-grid-row: 2;
+    -ms-grid-row: 3;
     -ms-grid-row-span: 1;
-    grid-row: 2/3;
+    grid-row: 3/4;
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
     grid-column: 2/3;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-top: 14em;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -703,12 +732,13 @@ button:hover {
     grid-column: 2/3;
     display: -ms-grid;
     display: grid;
+    height: 65vh;
+    width: 80vw;
     -ms-grid-rows: 1.2fr 6fr 1fr;
         grid-template-rows: 1.2fr 6fr 1fr;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     position: relative;
-    height: 30em;
   }
   section.about-info .skills .tech-stack .title {
     -ms-grid-row: 1;
@@ -747,6 +777,7 @@ button:hover {
     grid-column: 1/2;
     display: -ms-grid;
     display: grid;
+    width: 80vw;
     -ms-grid-rows: (1fr)[6];
         grid-template-rows: repeat(6, 1fr);
     -ms-grid-columns: 1fr;
@@ -754,8 +785,7 @@ button:hover {
     padding-top: 1em;
   }
   section.about-info .skills .tech-stack .icons .indi-icons {
-    max-width: 27em;
-    min-width: 20em;
+    width: 80vw;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -777,12 +807,13 @@ button:hover {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
+    padding-left: 1.5em;
   }
   section.about-info .skills .tech-stack .icons .indi-icons .icon-list img {
     scale: .8;
   }
   section.about-info .skills .tech-stack .icons .indi-icons .timeline {
-    padding-right: 2em;
+    padding-right: 1em;
     font-size: .9em;
   }
   section.about-info .end {
@@ -820,11 +851,6 @@ button:hover {
         -ms-flex-align: center;
             align-items: center;
   }
-  section.about-info .end .contact-info a {
-    color: white;
-    list-style: none;
-    border: none;
-  }
   section.about-info .end .contact-info .mail,
   section.about-info .end .contact-info .icon-link,
   section.about-info .end .contact-info .phno {
@@ -840,6 +866,14 @@ button:hover {
     font-size: .85em;
     letter-spacing: 2px;
   }
+  section.about-info .end .contact-info .mail {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    padding-bottom: 1em;
+  }
   section.about-info .end .contact-info .icon-link {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -848,10 +882,11 @@ button:hover {
         -ms-flex-pack: justify;
             justify-content: space-between;
     width: 100%;
+    scale: .8;
   }
-  section.about-info .end .contact-info .icon-link img {
-    margin-top: 1em;
-    width: 2.5em;
+  section.about-info .end .contact-info a {
+    list-style: none;
+    color: white;
   }
   section.about-info .end .contact-info .mail img,
   section.about-info .end .contact-info .phno img {
@@ -1643,11 +1678,6 @@ button:hover {
         -ms-flex-align: center;
             align-items: center;
   }
-  section.about-info .end .contact-info a {
-    color: white;
-    list-style: none;
-    border: none;
-  }
   section.about-info .end .contact-info .mail {
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
@@ -1699,10 +1729,7 @@ button:hover {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-  }
-  section.about-info .end .contact-info .icon-link img {
-    margin-top: 1em;
-    width: 2.5em;
+    scale: .8;
   }
 }
 
@@ -1860,6 +1887,10 @@ button:hover {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     letter-spacing: 4px;
     -webkit-box-align: start;
         -ms-flex-align: start;
@@ -1912,12 +1943,17 @@ button:hover {
   }
   section .scroll {
     -ms-grid-row: 3;
-    -ms-grid-row-span: 2;
-    grid-row: 3/5;
+    -ms-grid-row-span: 4;
+    grid-row: 3/7;
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
     grid-column: 2/3;
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
   }
   section .scroll .scroll-img {
     position: absolute;
@@ -2428,11 +2464,6 @@ button:hover {
     -ms-flex-pack: distribute;
         justify-content: space-around;
   }
-  section.about-info .end .contact-info a {
-    color: white;
-    list-style: none;
-    border: none;
-  }
   section.about-info .end .contact-info .phno {
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
@@ -2460,17 +2491,14 @@ button:hover {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 100%;
+    width: 70%;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-  }
-  section.about-info .end .contact-info .icon-link img {
-    margin-top: 1em;
-    width: 2.5em;
+    scale: .8;
   }
   .watermark {
     position: relative;

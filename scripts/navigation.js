@@ -35,7 +35,7 @@ const navBar = gsap.timeline();
 navBar
   .from(".logo", {
     duration: 1,
-    x: -550,
+    x: -350,
     ease: "power2.in",
   })
   .from(

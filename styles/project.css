@@ -45,13 +45,16 @@ button {
     display: -ms-grid;
     display: grid;
     width: 100vw;
-    height: 100vh;
+    max-width: 100vw;
+    overflow-y: hidden;
     -ms-grid-rows: 1.1fr 6.5fr .3fr 2.87fr 1fr;
         grid-template-rows: 1.1fr 6.5fr .3fr 2.87fr 1fr;
-    -ms-grid-columns: 1.2fr 2.5fr 4.35fr 1.2fr;
-        grid-template-columns: 1.2fr 2.5fr 4.35fr 1.2fr;
+    -ms-grid-columns: 3em 4fr 4fr 3em;
+        grid-template-columns: 3em 4fr 4fr 3em;
+    font-size: 1rem;
   }
   section .navbar {
+    position: fixed;
     display: -ms-grid;
     display: grid;
     -ms-grid-row: 1;
@@ -60,27 +63,43 @@ button {
     -ms-grid-column: 1;
     -ms-grid-column-span: 4;
     grid-column: 1/5;
+    width: 100%;
+    z-index: 999;
+    background-color: var(--bg-color);
+    padding-top: 1em;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
     -ms-grid-rows: 1fr;
         grid-template-rows: 1fr;
-    -ms-grid-columns: 1.2fr 2.5fr 4.35fr 1.2fr;
-        grid-template-columns: 1.2fr 2.5fr 4.35fr 1.2fr;
+    -ms-grid-columns: 3em 2.5fr 2.5fr 3em;
+        grid-template-columns: 3em 2.5fr 2.5fr 3em;
+    height: 10vh;
   }
   section .navbar .logo {
+    height: 100%;
+    -ms-flex-item-align: center;
+        align-self: center;
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
     grid-row: 1/2;
     -ms-grid-column: 2;
-    -ms-grid-column-span: 2;
-    grid-column: 2/4;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 60%;
-    letter-spacing: 2px;
+    z-index: 1000;
+    -o-object-fit: contain;
+       object-fit: contain;
     text-align: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    align-self: center;
+    justify-self: flex-start;
   }
   section .navbar nav {
     -ms-grid-row: 1;
@@ -100,12 +119,13 @@ button {
         -ms-flex-align: center;
             align-items: center;
     position: relative;
+    height: 100%;
   }
   section .navbar nav .hamburger {
     position: absolute;
     right: 0em;
+    bottom: 1.2em;
     scale: 1;
-    background-color: transparent;
   }
   section .contents {
     display: -ms-grid;
@@ -116,40 +136,115 @@ button {
     -ms-grid-column: 2;
     -ms-grid-column-span: 2;
     grid-column: 2/4;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    text-align: center;
-    -ms-flex-line-pack: distribute;
-        align-content: space-around;
-  }
-  section .contents .profession {
-    line-height: 20px;
-  }
-  section .contents .thought {
-    letter-spacing: -.8px;
+    font-size: 1rem;
+    display: grid;
+    -ms-grid-rows: 1fr 2fr 1fr 1fr;
+        grid-template-rows: 1fr 2fr 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
   }
   section .contents .back {
     z-index: 700;
+    margin-top: 1em;
+  }
+  section .contents .back img {
+    cursor: pointer;
+  }
+  section .contents .intro {
+    font-size: 1rem;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    width: 1em;
-    margin-top: 2em;
-    height: 1em;
-    justify-items: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
   }
-  section .clouds {
+  section .contents .thought {
+    font-size: 2rem;
     -ms-grid-row: 2;
     -ms-grid-row-span: 1;
     grid-row: 2/3;
     -ms-grid-column: 1;
-    -ms-grid-column-span: 6;
-    grid-column: 1/7;
-    opacity: 0.5;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-self: center;
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    letter-spacing: -1px;
+  }
+  section .contents .profession {
+    font-size: .9rem;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3/4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-self: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  section .contents .buttons {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    grid-row: 4/5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: .9rem;
+  }
+  section .contents .buttons a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  section .contents .buttons a:nth-child(1) {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+  }
+  section .contents .buttons a:nth-child(2) {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+  }
+  section .contents .buttons a button {
+    font-size: .8em;
   }
   section .message {
     -ms-grid-row: 6;
@@ -164,16 +259,21 @@ button {
     -ms-grid-column: 3;
     -ms-grid-column-span: 1;
     grid-column: 3/4;
-    margin: 0 auto;
-    position: relative;
   }
   section .message img {
-    position: absolute;
-    top: -5em;
-    right: -9em;
     scale: 0.7;
   }
+  section .clouds {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 6;
+    grid-column: 1/7;
+    opacity: 0.5;
+  }
   section .scroll {
+    height: 5em;
     -ms-grid-row: 4;
     -ms-grid-row-span: 1;
     grid-row: 4/5;
@@ -185,21 +285,37 @@ button {
     -ms-grid-row: 5;
     -ms-grid-row-span: 1;
     grid-row: 5/6;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 2;
-    grid-column: 2/4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-column: 1/5;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    width: 8em;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    z-index: 999;
+    position: fixed;
+    left: 33%;
+    bottom: 1em;
   }
-  section .page-indi img {
-    width: 8em;
+  section .page-indi a {
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #5b5b5b;
+    width: .6em;
+    -webkit-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+    height: .6em;
+  }
+  section .page-indi .active {
+    width: .8em;
+    height: .8em;
+    background-color: white;
   }
   .project {
     width: 100vw;
@@ -221,16 +337,16 @@ button {
   }
   section.project-info {
     width: 100vw;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
     background-color: white;
-    height: -webkit-min-content;
-    height: -moz-min-content;
-    height: min-content;
     display: -ms-grid;
     display: grid;
-    -ms-grid-rows: 10vh 2.5fr 10vh auto 1vh;
-        grid-template-rows: 10vh 2.5fr 10vh auto 1vh;
-    -ms-grid-columns: 2em 8fr 2em;
-        grid-template-columns: 2em 8fr 2em;
+    -ms-grid-rows: 5vh 2.5fr 5vh auto 1vh;
+        grid-template-rows: 5vh 2.5fr 5vh auto 1vh;
+    -ms-grid-columns: 10vw 80vw 10vw;
+        grid-template-columns: 10vw 80vw 10vw;
   }
   section.project-info .recent-collection-tab {
     -ms-grid-row: 2;
@@ -264,6 +380,7 @@ button {
     -ms-grid-column-span: 1;
     grid-column: 2/3;
     justify-self: center;
+    text-align: center;
   }
   section.project-info .recent-collection-tab .tabs {
     -ms-grid-row: 2;
@@ -302,6 +419,7 @@ button {
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
     grid-column: 2/3;
+    width: 50vw;
   }
   section.project-info .projects .wait {
     -ms-grid-row: 5;
@@ -313,13 +431,13 @@ button {
   }
   section.project-info .projects .project {
     background-color: var(--section-bg);
-    height: 100vh;
+    width: 80vw;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 2em 7.5fr 2em;
         grid-template-columns: 2em 7.5fr 2em;
-    -ms-grid-rows: 1fr 14fr 1fr;
-        grid-template-rows: 1fr 14fr 1fr;
+    -ms-grid-rows: 5vh 14fr 1fr;
+        grid-template-rows: 5vh 14fr 1fr;
   }
   section.project-info .projects .project .text {
     z-index: 30;
@@ -333,8 +451,8 @@ button {
     display: grid;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-    -ms-grid-rows: 1.2fr 4fr 2.7fr;
-        grid-template-rows: 1.2fr 4fr 2.7fr;
+    -ms-grid-rows: 1.2fr 4fr 2.2fr;
+        grid-template-rows: 1.2fr 4fr 2.2fr;
   }
   section.project-info .projects .project .text .top-heading {
     -ms-grid-row: 1;
@@ -377,7 +495,6 @@ button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 90%;
     font-size: .8em;
     text-align: justify;
     line-height: 1.8em;
@@ -506,13 +623,14 @@ button {
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
     grid-column: 1/2;
-    height: 110vh;
+    height: 130vh;
   }
   section.project-info .projects .JavaScript.active .pro2 {
+    margin-top: -3.5em;
     -ms-grid-row: 3;
     -ms-grid-row-span: 1;
     grid-row: 3/4;
-    height: 100vh;
+    height: 115vh;
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
     grid-column: 1/2;
@@ -599,17 +717,17 @@ button {
     display: none;
   }
   section.project-info .projects .JavaScript.active .wait {
+    margin-top: -6em;
     position: relative;
-    bottom: 2em;
   }
   section.project-info .projects .Cpp.active .pro1 {
-    height: 115vh;
+    height: 140vh;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 2.5em 6fr 1em;
-        grid-template-columns: 2.5em 6fr 1em;
-    -ms-grid-rows: 1em 14fr 1em;
-        grid-template-rows: 1em 14fr 1em;
+    -ms-grid-columns: 1.5em 6fr 1.5em;
+        grid-template-columns: 1.5em 6fr 1.5em;
+    -ms-grid-rows: 5vh 14fr 1em;
+        grid-template-rows: 5vh 14fr 1em;
   }
   section.project-info .projects .Cpp.active .pro1 .text {
     z-index: 30;
@@ -623,8 +741,8 @@ button {
     display: grid;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-    -ms-grid-rows: 1.2fr 4fr 2.7fr;
-        grid-template-rows: 1.2fr 4fr 2.7fr;
+    -ms-grid-rows: 1.2fr 4fr 2fr;
+        grid-template-rows: 1.2fr 4fr 2fr;
   }
   section.project-info .projects .Cpp.active .pro1 .text .top-heading {
     -ms-grid-row: 1;
@@ -820,17 +938,19 @@ button {
     padding-bottom: 4em;
   }
   section.project-info .projects .Cpp.active .wait {
+    font-size: .9rem;
+    width: 100vw;
     margin-top: 3em;
     margin-bottom: 2em;
   }
   section.project-info .projects .Python.active .pro1 {
-    height: 100vh;
+    height: 102vh;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 2.5em 6fr 1em;
-        grid-template-columns: 2.5em 6fr 1em;
-    -ms-grid-rows: 1fr 14fr 1fr;
-        grid-template-rows: 1fr 14fr 1fr;
+    -ms-grid-columns: 1.5em 6fr 1.5em;
+        grid-template-columns: 1.5em 6fr 1.5em;
+    -ms-grid-rows: 5vh 14fr 1fr;
+        grid-template-rows: 5vh 14fr 1fr;
   }
   section.project-info .projects .Python.active .pro1 .text {
     z-index: 30;
@@ -1009,13 +1129,13 @@ button {
     width: 100%;
   }
   section.project-info .projects .Python.active .pro1 .package-incl .icons .icon-list img {
-    width: 5em;
+    width: 3em;
     height: 1.5em;
   }
   section.project-info .projects .Python.active .pro1 .package-incl .icons .icon-list img:nth-child(3) {
     position: relative;
     width: 5em;
-    height: 3em;
+    height: 2.5em;
     bottom: .5em;
   }
   section.project-info .projects .Python.active .pro1 .package-incl .progress {
@@ -1033,6 +1153,8 @@ button {
     display: none;
   }
   section.project-info .projects .Python.active .wait {
+    font-size: .9rem;
+    width: 100vw;
     margin-top: 2em;
     margin-bottom: 1em;
   }
@@ -1045,7 +1167,7 @@ button {
     -ms-grid-column-span: 4;
     grid-column: 1/5;
     color: white;
-    height: 30vh;
+    height: 25vh;
     display: -ms-grid;
     display: grid;
     -ms-grid-rows: 1fr 5fr 1fr;
@@ -1071,11 +1193,6 @@ button {
         -ms-flex-align: center;
             align-items: center;
   }
-  section.project-info .end .contact-info a {
-    color: white;
-    list-style: none;
-    border: none;
-  }
   section.project-info .end .contact-info .mail {
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
@@ -1086,19 +1203,39 @@ button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 80%;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    width: 100%;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     -ms-flex-item-align: start;
         align-self: flex-start;
     -ms-flex-pack: distribute;
         justify-content: space-around;
+    font-size: .9rem;
+  }
+  section.project-info .end .contact-info .mail a {
+    width: 80%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   section.project-info .end .contact-info .mail img {
     scale: .9;
   }
+  section.project-info .end .contact-info a {
+    list-style: none;
+    color: white;
+  }
   section.project-info .end .contact-info .phno {
+    font-size: .9rem;
     -ms-grid-row: 3;
     -ms-grid-row-span: 1;
     grid-row: 3/4;
@@ -1112,13 +1249,27 @@ button {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -ms-flex-item-align: end;
-        align-self: flex-end;
+    -ms-flex-item-align: center;
+        align-self: center;
     -ms-flex-pack: distribute;
         justify-content: space-around;
   }
   section.project-info .end .contact-info .phno img {
     scale: .8;
+  }
+  section.project-info .end .contact-info .phno a {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   section.project-info .end .contact-info .icon-link {
     -ms-grid-row: 2;
@@ -1131,16 +1282,13 @@ button {
     display: -ms-flexbox;
     display: flex;
     width: 85%;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-  }
-  section.project-info .end .contact-info .icon-link img {
-    margin-top: 1em;
-    width: 2.5em;
+    scale: .8;
   }
   .page-indi {
     z-index: 0;
@@ -1277,7 +1425,6 @@ button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 100%;
     letter-spacing: 4px;
     text-align: left;
     -webkit-box-align: center;
@@ -1407,8 +1554,9 @@ button {
   }
   section.project-info {
     background-color: white;
-    height: auto;
-    width: 100vw;
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
     display: -ms-grid;
     display: grid;
     -ms-grid-rows: 1fr 2.5fr 1fr auto .4fr;
@@ -1495,7 +1643,6 @@ button {
     -ms-grid-column-span: 1;
     grid-column: 1/2;
     background-color: var(--section-bg);
-    height: 100vh;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 7fr 1fr;
@@ -1670,6 +1817,7 @@ button {
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
     grid-column: 1/2;
+    height: 150vh;
   }
   section.project-info .projects .JavaScript.active .pro1 .package-incl .icons:nth-child(2) .icon-list img:nth-child(4) {
     scale: 1;
@@ -1951,12 +2099,13 @@ button {
     grid-column: 1/5;
     color: white;
     height: 30vh;
+    width: 100vw;
     display: -ms-grid;
     display: grid;
     -ms-grid-rows: 1fr 5fr 1fr;
         grid-template-rows: 1fr 5fr 1fr;
-    -ms-grid-columns: 1fr 14fr 1fr;
-        grid-template-columns: 1fr 14fr 1fr;
+    -ms-grid-columns: 20vw 60vw 20vw;
+        grid-template-columns: 20vw 60vw 20vw;
   }
   section.project-info .end .contact-info {
     -ms-grid-row: 2;
@@ -1979,11 +2128,6 @@ button {
         -ms-flex-align: center;
             align-items: center;
   }
-  section.project-info .end .contact-info a {
-    color: white;
-    list-style: none;
-    border: none;
-  }
   section.project-info .end .contact-info .mail {
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
@@ -1994,7 +2138,7 @@ button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 85%;
+    width: 100%;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -2003,8 +2147,26 @@ button {
     -ms-flex-pack: distribute;
         justify-content: space-around;
   }
+  section.project-info .end .contact-info .mail a {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
   section.project-info .end .contact-info .mail img {
     scale: .9;
+  }
+  section.project-info .end .contact-info a {
+    list-style: none;
+    color: white;
   }
   section.project-info .end .contact-info .phno {
     -ms-grid-row: 3;
@@ -2016,7 +2178,7 @@ button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 90%;
+    width: 100%;
     -ms-flex-item-align: end;
         align-self: flex-end;
     -webkit-box-align: center;
@@ -2024,6 +2186,20 @@ button {
             align-items: center;
     -ms-flex-pack: distribute;
         justify-content: space-around;
+  }
+  section.project-info .end .contact-info .phno a {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   section.project-info .end .contact-info .phno img {
     scale: .8;
@@ -2038,17 +2214,13 @@ button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 85%;
+    width: 100%;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  section.project-info .end .contact-info .icon-link img {
-    margin-top: 1em;
-    width: 2.5em;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    scale: .8;
   }
   .animate-lines img {
     width: 10em;
@@ -2958,11 +3130,6 @@ button {
         -ms-flex-align: center;
             align-items: center;
   }
-  section.project-info .end .contact-info a {
-    color: white;
-    list-style: none;
-    border: none;
-  }
   section.project-info .end .contact-info .mail {
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
@@ -3059,12 +3226,26 @@ button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 60%;
+    width: 100%;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
     -ms-flex-pack: distribute;
         justify-content: space-around;
+  }
+  .end .contact-info .mail a {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .end .contact-info .phno {
     -ms-grid-row: 1;
@@ -3076,12 +3257,26 @@ button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 50%;
+    width: 100%;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
     -ms-flex-pack: distribute;
         justify-content: space-around;
+  }
+  .end .contact-info .phno a {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .end .contact-info .icon-link {
     -ms-grid-row: 1;
@@ -3100,10 +3295,7 @@ button {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-  }
-  .end .contact-info .icon-link img {
-    margin-top: 1em;
-    width: 2.5em;
+    scale: .8;
   }
 }
 

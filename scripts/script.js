@@ -10,8 +10,10 @@ const cursor = gsap.to(".cursor", {
 // profession gsap
 const professions = [
   "Game Engine Developer",
-  "Designer",
+  "UI/UX Designer",
+  "Full Stack Developer",
   "Computer Science Engineer",
+  "Data Analyst",
 ];
 
 const wordsTl = gsap
@@ -57,10 +59,10 @@ introductionSection
     ".main .thought",
     {
       duration: 1.5,
-      x: -1200,
+      x: -900,
       ease: "elastic.out(1,1.7)",
     },
-    "-=1.3"
+    "-=1.1"
   )
   .from(
     ".main .animate-lines",
@@ -327,7 +329,3 @@ contactSection
     },
     "-=1.95"
   );
-
-
-
-
